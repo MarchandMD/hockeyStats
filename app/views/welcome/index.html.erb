@@ -1,0 +1,84 @@
+<h1>Welcome#index</h1>
+<% player = Celly::Player.new %>
+<% players = [] %>
+<% i = 8478402 %>
+<% while i < 8478412%>
+  <% players << player.profile(i) %>
+  <% i += 1%>
+<% end %>
+<% player_names = [] %>
+<% players.each { |player| player_names << player[:data][0]["fullName"] } %>
+<ol>
+  <% player_names.each do |x| %>
+    <li><%= x %></li>
+  <% end %>
+</ol>
+<div class="main">
+  <h1>player season stats</h1>
+  <% player.season_stats(8478402, 20202021)[:data].each_pair do |key, value| %>
+    <li>
+      <%= key %>
+      <%= value %>
+    <% end %>
+  </li>
+</div>
+<div class="main">
+  <h1>player regular season career stats</h1>
+  <ul>
+    <% player.regular_season_career_stats(8478402)[:data].each_pair do |key, value| %>
+      <li><%=  "#{key}: #{value}" %> </li>
+    <% end %>
+  </ul>
+</div>
+<div class="main">
+  <h1>player playoffs career stats</h1>
+  <% player.playoffs_career_stats(8478402)[:data].each_pair do |key, value| %>
+    <div><%= "#{key} : #{value}" %></div>
+  <% end%>
+</div>
+<div class="main">
+  <h1>player playoff stats by year</h1>
+  <% playoff_stats_mcD = player.playoffs_stats_by_year(8478402) %>
+  <ul>
+    <% playoff_stats_mcD[:data].each do |x| %>
+      <li><%=  x['season'] %></li>
+      <li><%= x['stat'] %></li>
+    <% end %>
+  </ul>
+</div>
+<% team = Celly::Team.new %>
+<h1>teams all</h1>
+<div class="container">
+  <div class="row">
+    <% team.all[:data].each do |x| %>
+      <div class="card col-sm-3">
+        <div class="card-body">
+          <a href="#">
+            <h5 class="card-title"><%= x['name'] %></h5>
+          </a>
+          <p class="card-text">Team id:<%= x['id']%></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="main">
+  <h1>teams roster for the Hawks</h1>
+  <ul>
+    <% names = [] %>
+    <% team.roster(16)[:data].each do |x| %>
+      <% names << x['person']['fullName'] %>
+    <% end %>
+    <% names.sort.each do |x|  %>
+      <li><%= x %></li>
+    <% end%>
+  </ul>
+</div>
+<div class="main">
+  <h1>teams i don't know but the method is find</h1>
+  <%= team.find(16)[:data][0]['name'] %>
+</div>
+<div class="main">
+  <h1>team stats for Hawks</h1>
+  <%= team.stats(16).class %>
+</div>
