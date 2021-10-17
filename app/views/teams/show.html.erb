@@ -1,9 +1,34 @@
 <h1>teams#show </h1>
 
-<%= link_to "back to teams", teams_path %>
+<div>
+  <div><%= link_to "back to teams", teams_path %></div>
+  <div><%= link_to "back to home", welcome_index_path %></div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <h1>ROSTER</h1>
+  </div>
+</div>
+<% players = Array.new%>
 <% team =  @team.roster(params[:id]) %>
 <% team[:data].each do |player| %>
-<div>
-<%= player['person']['fullName'] %>
+<div class="container">
+<% players << player['person']['fullName'] %>
+<div class="row"><%= player['person']['fullName'] %></div>
 </div>
 <% end %>
+<div class="container">
+  <div class="row">
+  <h1>Team Data</h1>
+  <%= team[:data].count %>
+  <%= team[:data].class %>
+  <%= team[:data].pop %>
+  <% players.sort.each do |player| %>
+  <div class="container">
+    <div class="row"><%= player %></div>
+  </div>
+  <% end%>
+  <%= @team.stats(params[:id]) %>
+  </div>
+</div>
