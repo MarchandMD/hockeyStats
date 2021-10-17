@@ -1,0 +1,15 @@
+<h1>Teams#index</h1>
+<p>Find me in app/views/teams/index.html.erb</p>
+<%= link_to "Home Page", root_path %>
+<div class="container">
+  <div class="row">
+    <% @team.all[:data].each do |org| %>
+      <div class="card col-sm-3">
+        <div class="card-body">
+          <%= link_to org['name'], team_path(org['id']) %>
+          <p class="card-text">Team id:<%= org['id']%></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

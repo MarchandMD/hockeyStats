@@ -1,0 +1,9 @@
+<h1>teams#show </h1>
+
+<%= link_to "back to teams", teams_path %>
+<% team =  @team.roster(params[:id]) %>
+<% team[:data].each do |player| %>
+<div>
+<%= player['person']['fullName'] %>
+</div>
+<% end %>
