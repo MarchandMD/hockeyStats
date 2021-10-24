@@ -1,22 +1,23 @@
 <h1>Teams#index</h1>
-<div class="container">
-  <div class="row"><%= link_to "Home Page", root_path %></div>
-  </div>
+<%= params %>
 <div class="container">
   <div class="row">
-    <% @team.all[:data].each do |org| %>
+    <% @all_teams.each do |team| %>
       <div class="card col-sm-3">
         <div class="card-body">
-          <%= link_to org['name'], team_path(org['id']) %>
-          <p class="card-text">Team id:<%= org['id']%></p>
-          <p class="card-text">Org link:<%= org['link']%></p>
-          <p class="card-text">Org. venue:<%= org['venue']%></p>
-          <p class="card-text">Org. official site URL:<%= link_to(org['officialSiteUrl'], org['officialSiteUrl'] )%></p>
+          <%= link_to team['name'], team_path(team['id']) %>
+          <p class="card-text">Team id:<%= team['id']%></p>
+          <p class="card-text">team link:<%= team['link']%></p>
+          <p class="card-text">Rink</p>
+          <% team['venue'].each_pair do |key, value| %>
+          <p class="card-text"><%=  "#{key} : #{value}" %></p>
+          <% end%>
+          <p class="card-text">team official site URL:<%= link_to(team['officialSiteUrl'], team['officialSiteUrl'] )%></p>
         </div>
       </div>
     <% end %>
-    <%= @team.all[:data].class %>
-    <%= @team.all[:data].count %>
-    <%= @team.all[:data].pop %>
+    <%= @teams.all[:data].class %>
+    <%= @teams.all[:data].count %>
+    <%= @teams.all[:data].pop %>
   </div>
 </div>

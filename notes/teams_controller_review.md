@@ -121,3 +121,53 @@ So what do I need for that?
 I mean, I already sort of have that on my show page....
 
 So I want to show more information. 
+
+So there's still some mystery about what i'm doing, and connecting everything together. 
+
+From what I can recall, it's a matter of routes, a controller, and views. 
+
+In the routes, what I'm establishing are the URL requests that are valid. I'm also establishing Rails specific shortcuts for creating html links in the views.
+
+Then with the controller I create the file that has the actual controller actions in them. 
+
+In the controller what I'm able to do is specify specific actions for the methods, so when that controller and action are called, the view will have available to code within that method/action, to use within ERB
+
+And finally, also while coming into existence during the generation of the controller, I have the associated views, which will be automatically referenced when the approrpriate controller#action pair is referenced. 
+
+In that view, I can use the code within the method/action to populate the page(s) by accessing those variables as made available by the scope of those actions, using ERB. 
+
+Ok, I htin that makes sense. 
+
+But another question is...where are these params coming from? 
+
+Because I am using params, and I'm not certain that I know exactly where they're coming from. 
+
+So in the `views/teams/show.html.erb` file, ahhh! I'm learning too much! and I'm interested in something esle too! 
+
+So what was I doing? 
+
+So the `show.html.erb` view is related to the `teams_controller` and also to the `show` action. 
+
+So i'm able to access the variables within the `teams#show` controller#action...
+
+And that's where I've set up the `@teams.find(params[:id])` code....
+
+So, how does this work though? 
+
+I think the way this works is....when this URL is called or requested, it's expecting some input from the HTTP request, in the form of the `params` Hash, apparently. 
+
+I'm pretty sure that's what's happening. 
+
+So then, I guess my question is: where is the data coming from, that is being used for the params Hash?
+
+I mean, because somewhere data has to get into the `params` HASH. 
+
+Wow, ok, i really did a lot. 
+
+Rails is really powerful with very little code. That's fucking remarkable. 
+
+I actually ahve to go all the way back to the `index` page and look at the `link_to` helper I used/wrote. 
+
+In the `link_to` helper I wrote, I added some information to the second argument for the method, that would populate the `params` hash, to use in the URL request/HTTP request. 
+
+So it's made in the link. 

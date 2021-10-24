@@ -1,10 +1,11 @@
 class TeamsController < ApplicationController
+  
   def index
-    @team = Celly::Team.new
+    @teams = Celly::Team.new
+    @all_teams = @teams.all[:data]
   end
 
   def show
     @team = Celly::Team.new
-    @team.find(params[:id])
   end
 end

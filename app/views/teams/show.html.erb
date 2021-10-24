@@ -1,34 +1,43 @@
 <h1>teams#show </h1>
-
-<div>
-  <div><%= link_to "back to teams", teams_path %></div>
-  <div><%= link_to "back to home", welcome_index_path %></div>
-</div>
 <br>
 <div class="container">
   <div class="row">
     <h1>ROSTER</h1>
+    <%= params %>
   </div>
 </div>
 <% players = Array.new%>
 <% team =  @team.roster(params[:id]) %>
 <% team[:data].each do |player| %>
-<div class="container">
-<% players << player['person']['fullName'] %>
-<div class="row"><%= player['person']['fullName'] %></div>
-</div>
+  <div class="container">
+    <% players << player['person']['fullName'] %>
+    <div class="row">
+      <div class="col"><%= player['person']['fullName'] %></div>
+      <div class="col"><%= link_to(player['person']['fullName'], player_path(player['person']['id'])) %></div>
+    </div>
+  </div>
 <% end %>
 <div class="container">
   <div class="row">
-  <h1>Team Data</h1>
-  <%= team[:data].count %>
-  <%= team[:data].class %>
-  <%= team[:data].pop %>
-  <% players.sort.each do |player| %>
-  <div class="container">
-    <div class="row"><%= player %></div>
-  </div>
-  <% end%>
-  <%= @team.stats(params[:id]) %>
+    <h1>Team Data</h1>
+    <p>Here is individual calls to the `team[:data]` count class and pop</p>
+    <%= team[:data].count %>
+    <%= team[:data].class %>
+    <%= team[:data].pop %>
+    <br>
+    <br>
+    <h3>This will be alphabetized</h3>
+    <% players.sort.each do |player| %>
+      <div class="container">
+        <div class="row">
+        <div class="col"><%= player %></div>
+        <div class="col">this is now empty</div>
+        </div>
+      </div>
+    <% end%>
+    <h1>team.stats(id)</h1>
+    <%= @team.stats(params[:id]) %>
+    <h1>team.find(id)</h1>
+    <%= @team.find(params[:id]) %>
   </div>
 </div>

@@ -1,51 +1,10 @@
-<h1>Welcome#index</h1>
-<%= link_to("list of teams", teams_path) %>
-<% player = Celly::Player.new %>
-<% players = [] %>
-<% i = 8478402 %>
-<% while i < 8478412%>
-  <% players << player.profile(i) %>
-  <% i += 1%>
-<% end %>
-<% player_names = [] %>
-<% players.each { |player| player_names << player[:data][0]["fullName"] } %>
-<ol>
-  <% player_names.each do |x| %>
-    <li><%= x %></li>
-  <% end %>
-</ol>
-<div class="main">
-  <h1>player season stats</h1>
-  <% player.season_stats(8478402, 20202021)[:data].each_pair do |key, value| %>
-    <li>
-      <%= key %>
-      <%= value %>
-    <% end %>
-  </li>
+<div class="row border border-2">
+  <div class="col d-flex justify-content-center">
+    <h1>Welcome#index</h1>
+  </div>
 </div>
-<div class="main">
-  <h1>player regular season career stats</h1>
-  <ul>
-    <% player.regular_season_career_stats(8478402)[:data].each_pair do |key, value| %>
-      <li><%=  "#{key}: #{value}" %> </li>
-    <% end %>
-  </ul>
+<div class="row border border-1">
+  <div class="col d-flex justify-content-center">
+    here is a column spanning all 12-columns (in a row) for content
+  </div>
 </div>
-<div class="main">
-  <h1>player playoffs career stats</h1>
-  <% player.playoffs_career_stats(8478402)[:data].each_pair do |key, value| %>
-    <div><%= "#{key} : #{value}" %></div>
-  <% end%>
-</div>
-<div class="main">
-  <h1>player playoff stats by year</h1>
-  <% playoff_stats_mcD = player.playoffs_stats_by_year(8478402) %>
-  <ul>
-    <% playoff_stats_mcD[:data].each do |x| %>
-      <li><%=  x['season'] %></li>
-      <li><%= x['stat'] %></li>
-    <% end %>
-  </ul>
-</div>
-
-
