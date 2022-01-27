@@ -1,0 +1,9 @@
+<h1>Standings#show</h1>
+<p>Find me in app/views/standings/show.html.erb</p>
+<%= @standings.overall(20222021)[:data] %>
+<h1>divisions</h1>
+<%= @metropolitan %>
+<h1>team records</h1>
+<%= @metro_team_records %>
+<%# @metro_team_records[0].transform_keys!(&:to_sym)  %>
+<%# @metro_team_records[1].transform_keys!(&:to_sym)  %>

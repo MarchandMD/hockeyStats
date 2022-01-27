@@ -1,5 +1,4 @@
 <h1>Teams#index</h1>
-<%= params %>
 <div class="container">
   <div class="row">
     <% @all_teams.each do |team| %>
@@ -10,7 +9,7 @@
           <p class="card-text">team link:<%= team['link']%></p>
           <p class="card-text">Rink</p>
           <% team['venue'].each_pair do |key, value| %>
-          <p class="card-text"><%=  "#{key} : #{value}" %></p>
+            <p class="card-text"><%=  "#{key} : #{value}" %></p>
           <% end%>
           <p class="card-text">team official site URL:<%= link_to(team['officialSiteUrl'], team['officialSiteUrl'] )%></p>
         </div>
