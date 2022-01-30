@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'schedule/index'
+  get 'leaders/index'
+  get 'scores/index'
   get 'standings/show'
     root to: 'welcome#index'
 
