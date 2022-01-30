@@ -1,6 +1,26 @@
 <h1>Teams#index</h1>
 <div class="container">
   <div class="row">
+    <div class="col">id</div>
+    <div class="col">other</div>
+  </div>
+  <div class="row">
+    <div class="col"><%= @all_teams[0]["id"] %></div>
+    <div class="col"><%= @all_teams[0]["name"] %></div>
+    <div class="col"><%= @all_teams[0]["link"] %></div>
+    <div class="col"><%= @all_teams[0]["venue"] %></div>
+    <div class="col"><%= @all_teams[0]["abbreviation"] %></div>
+    <div class="col"><%= @all_teams[0]["teamName"] %></div>
+    <div class="col"><%= @all_teams[0]["locationName"] %></div>
+    <div class="col"><%= @all_teams[0]["firstYearOfPlay"] %></div>
+    <div class="col"><%= @all_teams[0]["division"] %></div>
+    <div class="col"><%= @all_teams[0]["conference"] %></div>
+    <div class="col"><%= @all_teams[0]["franchiseId"] %></div>
+    <div class="col"><%= @all_teams[0] %></div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
     <% @all_teams.each do |team| %>
       <div class="card col-sm-3">
         <div class="card-body">
