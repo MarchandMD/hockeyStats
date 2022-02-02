@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  get 'schedule/index'
-  get 'leaders/index'
-  get 'scores/index'
-  get 'standings/show'
-    root to: 'welcome#index'
-
   resources :teams, only:[:index, :show]
   resources :players, only:[:index, :show]
-  resources :standings, only:[:index]
+  resources :standings, only:[:index, :show]
+  resources :leaders, only: [:index]
+  resources :schedule, only: [:index]
+  resources :scores, only: [:index]
+
+  root to: 'welcome#index'
 end

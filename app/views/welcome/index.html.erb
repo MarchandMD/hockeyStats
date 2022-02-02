@@ -1,10 +1,10 @@
-<div class="row border border-2">
-  <div class="col d-flex justify-content-center">
-    <h1>Welcome#index</h1>
-  </div>
-</div>
-<div class="row border border-1">
-  <div class="col d-flex justify-content-center">
-    here is a column spanning all 12-columns (in a row) for content
-  </div>
+
+<div class="row">
+  <div class="columns col">
+  <%= link_to 'Leaders', leaders_path %> - goals, assists, points, wins, shutouts</div>
+  <div class="columns col"><%= link_to 'Players', players_path %> - profile, season stats, regular season career stats, playoffs career stats, playoff stats by year</div>
+  <div class="columns col"><%= link_to 'Schedules', schedule_index_path %> - all, specific team</div>
+  <div class="columns col"><%= link_to 'Scores', scores_path %> - today, yesterday, specific</div>
+  <div class="columns col"><%= link_to 'Standings', standings_path %> - overall</div>
+  <div class="columns col"><%= link_to 'Teams', teams_path %> - all, roster, profile, stats</div>
 </div>
