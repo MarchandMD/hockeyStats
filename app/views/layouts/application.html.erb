@@ -11,7 +11,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div id="" class="bg-warning">
+    <div class="bg-warning p-3">
       <h1>HockeyStats</h1>
     </div>
     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
@@ -19,6 +19,7 @@
         <%= link_to("Home", root_path, class: "navbar-nav") %>
         <%= link_to("Teams", teams_path, class: "navbar-nav") %>
         <%= link_to "Standings", standings_path %>
+        <%= link_to 'Schedule', schedule_index_path %>
       </div>
     </nav>
     <div class="container">

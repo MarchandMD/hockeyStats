@@ -1,9 +1,6 @@
-<p><%= @current_goals_leaders %></p>
-
-<%# form_with scope: :leaders, url: leaders_path, method: :get  do |form| %>
-
-<%# select_tag(:season_id, options_for_select([["2022-2021","20222021"],["2021-2020","20212020"],["2020-2019","20202019"] ])) %>
-
-<%# form.submit  %>
-
-<%# end %>
+<%# @json_response %>
+<% @leaders.each do |player| %>
+  <div class="row">
+    <%= player['person']['fullName'] %>
+  </div>
+<% end %>
