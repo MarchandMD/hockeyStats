@@ -33,7 +33,6 @@ class PlayersController < ApplicationController
       @regular_season_career_stats = @player.regular_season_career_stats(player_id)
       @playoffs_career_stats = @player.playoffs_career_stats(player_id)
       @playoffs_stats_by_year = @player.playoffs_stats_by_year(player_id)
-      
     end
   end
 end
