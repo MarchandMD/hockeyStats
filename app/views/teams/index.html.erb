@@ -1,42 +1,13 @@
-<h1>Teams#index</h1>
+<h1>Teams</h1>
 <div class="container">
   <div class="row">
-    <div class="col">id</div>
-    <div class="col">other</div>
-  </div>
-  <div class="row">
-    <div class="col"><%= @all_teams[0]["id"] %></div>
-    <div class="col"><%= @all_teams[0]["name"] %></div>
-    <div class="col"><%= @all_teams[0]["link"] %></div>
-    <div class="col"><%= @all_teams[0]["venue"] %></div>
-    <div class="col"><%= @all_teams[0]["abbreviation"] %></div>
-    <div class="col"><%= @all_teams[0]["teamName"] %></div>
-    <div class="col"><%= @all_teams[0]["locationName"] %></div>
-    <div class="col"><%= @all_teams[0]["firstYearOfPlay"] %></div>
-    <div class="col"><%= @all_teams[0]["division"] %></div>
-    <div class="col"><%= @all_teams[0]["conference"] %></div>
-    <div class="col"><%= @all_teams[0]["franchiseId"] %></div>
-    <div class="col"><%= @all_teams[0] %></div>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <% @all_teams.each do |team| %>
-      <div class="card col-sm-3">
-        <div class="card-body">
-          <%= link_to team['name'], team_path(team['id']) %>
-          <p class="card-text">Team id:<%= team['id']%></p>
-          <p class="card-text">team link:<%= team['link']%></p>
-          <p class="card-text">Rink</p>
-          <% team['venue'].each_pair do |key, value| %>
-            <p class="card-text"><%=  "#{key} : #{value}" %></p>
-          <% end%>
-          <p class="card-text">team official site URL:<%= link_to(team['officialSiteUrl'], team['officialSiteUrl'] )%></p>
-        </div>
+  <%= link_to image_tag('1.svg'), team_path(1) %>
+    <% @teams.each do |team| %>
+      <div class="col-sm-6 col-md-3 p-2 d-flex flex-column align-items-center">
+        <%# image_tag("https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{team['id']}.svg") %>
+        <%# link_to(image_tag('1.svg')), welcome_index_path %>
+        <%= link_to image_tag("1.svg"), leaders_path %>
       </div>
     <% end %>
-    <%= @teams.all[:data].class %>
-    <%= @teams.all[:data].count %>
-    <%= @teams.all[:data].pop %>
   </div>
 </div>

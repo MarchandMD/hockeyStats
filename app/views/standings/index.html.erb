@@ -1,27 +1,10 @@
 <h1>Standings#index</h1>
-  <table>
-<% @raw_data.each do |x|  %>
-    <tr>
-      <th><%= x['division']['name'] %></th>
-    </tr>
-    <tr>
-      <td>Team</td>
-      <td>points</td>
-      <td>wins</td>
-      <td>regulation wins</td>
-      <td>losses</td>
-      <td>OT points</td>
-    </tr>
-    <% x['teamRecords'].each do |teamRecord| %>
-      <tr>
-        <td><%= teamRecord['team']['name'] %></td>
-        <td><%= teamRecord['points'] %></td>
-        <td><%= teamRecord['leagueRecord']['wins'] %></td>
-        <td><%= teamRecord['regulationWins'] %></td>
-        <td><%= teamRecord['leagueRecord']['losses'] %></td>
-        <td><%= teamRecord['leagueRecord']['ot'] %></td>
-        <td><%# teamRecord %></td>
-      </tr>
-    <% end %>
+<% @divisions.each do |division| %>
+  <% division['teamRecords'].each do |team| %>
+    <div class="row">
+    <div class="col"><%=image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{team['team']['id']}.svg", :size => "100x80" %></div>
+    <div class="col"><%= team['team']['name'] %></div>
+      
+    </div>
+  <% end%>
 <% end %>
-  </table>

@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
+gem 'dotenv'
 gem 'celly'
 gem 'rest-client'
 gem 'simple_calendar'
