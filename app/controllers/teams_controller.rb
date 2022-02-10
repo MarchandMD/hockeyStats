@@ -13,12 +13,10 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @team = Celly::Team.new
-
-    @players = {}
-    @team_roster = @team.roster(params[:id])
-    @team_roster[:data].each do |player|
-      @players[player['person']['fullName']] = player['person']['id']
-    end
+    roster_modifier = '?expand=team.roster'
+    @team_data = RestClient.get("#{ENV['BASE']}/teams/#{params[:id]}#{roster_modifier}")
+    # render json: JSON.pretty_generate(JSON.parse(@team_data))
+    @team_json = JSON.parse(@team_data)
+    @roster = @team_json['teams'][0]['roster']['roster']
   end
 end

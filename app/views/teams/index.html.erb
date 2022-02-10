@@ -1,12 +1,13 @@
 <h1>Teams</h1>
 <div class="container">
   <div class="row">
-  <%= link_to image_tag('1.svg'), team_path(1) %>
+  <%# <%= link_to image_tag('1.svg'), team_path(1) %>
     <% @teams.each do |team| %>
       <div class="col-sm-6 col-md-3 p-2 d-flex flex-column align-items-center">
         <%# image_tag("https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{team['id']}.svg") %>
         <%# link_to(image_tag('1.svg')), welcome_index_path %>
-        <%= link_to image_tag("1.svg"), leaders_path %>
+        <%# link_to image_tag("1.svg"), leaders_path %>
+        <%= link_to "#{team['name']}", team_path(team['id']) %>
       </div>
     <% end %>
   </div>

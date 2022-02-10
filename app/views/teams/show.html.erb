@@ -1,14 +1,11 @@
-<h1>teams#show </h1>
-<br>
+<%= link_to 'all teams', teams_path %>
+<h1>ROSTER</h1>
 <div class="container">
-  <div class="row">
-    <h1>ROSTER</h1>
-    <%= params %>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <%= @players %>
-  </div>
+	<% @roster.each do |player| %>
+		<div class="row">
+			<div class="col"><%= link_to "#{player['person']['fullName']}", player_path(player['person']['id']) %></div>
+			<div class="col"><%= player['jerseyNumber'] %></div>
+			<div class="col"><%= player['position']['abbreviation'] %></div>
+		</div>
+	<% end %>
 </div>
