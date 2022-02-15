@@ -1,48 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <title>HockeyStats</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body class="container">
-    <nav class="navbar bg-black bg-gradient text-decoration-none text-light">
-      <div class="container-fluid d-flex justify-content-evenly">
-        <%= link_to "Home", root_path, class: "text-light text-decoration-none" %>
-        <%= link_to"Teams", teams_path, class: "text-light text-decoration-none" %>
-        <%= link_to "Standings", standings_path, class: "text-light text-decoration-none" %>
-        <%= link_to 'Schedule', schedule_index_path, class: "text-light text-decoration-none" %>
-      </div>
-    </nav>
-    <div class="p-5 d-flex flex-column align-items-center bg-primary bg-gradient">
-      <h1 class="display-1">HockeyStats</h1>
-      <h6 class="display-6">Just a bunch of random stuff</h6>
-    </div>
-    <div class="container">
-      <%= yield %>
-    </div>
-    <div class="container">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <div class="col-md-4 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
-      </a>
-      <span class="text-muted">&copy; 2021 Company, Inc</span>
-    </div>
-
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
-    </ul>
-  </footer>
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-  </body>
-  
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+		<title>HockeyStats</title>
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
+	<body class="container">
+		<%= render partial: 'partials/navbar' %>
+		<%= render partial: 'partials/banner' %>
+		<div class="container">
+			<%= yield %>
+		</div>
+		<%= render partial: 'partials/footer' %>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+	</body>
 </html>
