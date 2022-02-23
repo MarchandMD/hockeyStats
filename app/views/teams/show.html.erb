@@ -1,15 +1,13 @@
 <h1><%= "#{@team_json['teams'][0]['name']} Roster" %></h1>
 <div class="container">
-<div class="row">
-	<div class="col">name</div>
-	<div class="col">jersey number</div>
-	<div class="col">position</div>
-</div>
-	<% @roster.each do |player| %>
+	<div class="row">
+		<div class="col">name</div>
+		<div class="col">jersey number</div>
+		<div class="col">position</div>
+	</div>
+	<% @players.each do |player| %>
 		<div class="row">
-			<div class="col p-1 border"><%= link_to "#{player['person']['fullName']}", player_path(player['person']['id']) %></div>
-			<div class="col p-1 border"><%= player['jerseyNumber'] %></div>
-			<div class="col p-1 border"><%= player['position']['abbreviation'] %></div>
+			<%= render partial: 'partials/player', :locals => {:player => player} %>
 		</div>
 	<% end %>
 </div>

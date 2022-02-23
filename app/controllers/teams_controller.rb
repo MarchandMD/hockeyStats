@@ -18,6 +18,6 @@ class TeamsController < ApplicationController
     # render json: JSON.pretty_generate(JSON.parse(@team_data))
     @team_json = JSON.parse(@team_data)
     # render json: JSON.pretty_generate(@team_json)
-    @roster = @team_json['teams'][0]['roster']['roster']
+    @players = @team_json['teams'][0]['roster']['roster']
   end
 end
