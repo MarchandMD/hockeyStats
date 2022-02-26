@@ -17,7 +17,6 @@ class TeamsController < ApplicationController
     @team_data = RestClient.get("#{ENV['BASE']}/teams/#{params[:id]}#{roster_modifier}")
     # render json: JSON.pretty_generate(JSON.parse(@team_data))
     @team_json = JSON.parse(@team_data)
-    # render json: JSON.pretty_generate(@team_json)
-    @players = @team_json['teams'][0]['roster']['roster']
+    @roster = @team_json['teams'][0]['roster']['roster']
   end
 end

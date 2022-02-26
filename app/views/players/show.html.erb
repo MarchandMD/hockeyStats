@@ -1,11 +1,20 @@
 <div class="container">
 	<div class="row">
-		<div class="col"><%= @player_id %></div>
-		<div class="col"><%= @player_fullName %></div>
-		<div class="col"><%= @player_link %></div>
-		<div class="col"><%= @player_firstName %></div>
-		<div class="col"><%= @player_lastName %></div>
-		<div class="col"><%= @player_primaryNumber %></div>
-		<div class="col"><%= @time_on_ice %></div>
-	</div>
+			<%= link_to 'Back to Full Roster', team_path(@player['currentTeam']['id']) %>
+		</div>
 </div>
+<table class="table">
+	<tr>
+		<th>ID</th>
+		<th>name</th>
+		<th>link</th>
+		<th>first</th>
+		<th>last</th>
+		<th>number</th>
+		<th>birthdate</th>
+		<th>stats</th>
+	</tr>
+	<tr>
+		<%= render partial: 'player' %>
+	</tr>
+</table>

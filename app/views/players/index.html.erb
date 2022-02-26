@@ -1,5 +1,4 @@
-<h1>Players#index</h1>
-<p>Find me in app/views/players/index.html.erb</p>
+
 <h1>type the name of the player to get their stats:</h1>
 <%= form_with scope: :player, method: :get , url: player_path(id = 8478402), local: true do |form| %>
 <%= form.label :player_name %>

@@ -1,13 +1,13 @@
 <h1><%= "#{@team_json['teams'][0]['name']} Roster" %></h1>
-<div class="container">
-	<div class="row">
-		<div class="col">name</div>
-		<div class="col">jersey number</div>
-		<div class="col">position</div>
-	</div>
-	<% @players.each do |player| %>
-		<div class="row">
-			<%= render partial: 'partials/player', :locals => {:player => player} %>
-		</div>
+<table class="table">
+	<tr>
+		<th>name</th>
+		<th>number</th>
+		<th>position</th>
+	</tr>
+	<% @roster.each do |player| %>
+	<tr>
+		<%= render partial: 'roster_spot', :locals => {:player => player} %>
+	</tr>
 	<% end %>
-</div>
+</table>
