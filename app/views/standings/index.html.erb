@@ -1,10 +1,13 @@
-<h1>Standings#index</h1>
-<% @divisions.each do |division| %>
-  <% division['teamRecords'].each do |team| %>
-    <div class="row">
-    <div class="col"><%=image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{team['team']['id']}.svg", :size => "100x80" %></div>
-    <div class="col"><%= team['team']['name'] %></div>
-      
-    </div>
-  <% end%>
-<% end %>
+<div class="row">
+	<% @divisions.each do |division| %>
+		<div class="col-3">
+			<div class="col d-flex justify-content-center"><%= division['division']['name'] %></div>
+			<% division['teamRecords'].each do |team| %>
+				<div class="row">
+					<div class="col d-flex justify-content-center"><%=link_to image_tag("https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{team['team']['id']}.svg", :size => "90x80"), team_path(team['team']['id']) %></div>
+					<div class="col d-flex justify-content-center align-items-center"><%= team['team']['name'] %></div>
+				</div>
+			<% end%>
+		</div>
+	<% end %>
+</div>

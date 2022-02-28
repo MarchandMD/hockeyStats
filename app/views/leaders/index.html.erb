@@ -1,6 +1,8 @@
 <%# @json_response %>
-<% @leaders.each do |player| %>
-  <div class="row">
-    <%= player['person']['fullName'] %>
-  </div>
-<% end %>
+<div class="row" id="leaders">
+	<% @leaders.each do |player| %>
+		<div class="col">
+			<%= player['person']['fullName'] %>
+		</div>
+	<% end %>
+</div>
