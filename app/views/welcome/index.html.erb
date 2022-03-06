@@ -1,29 +1,50 @@
 <div class="row mt-3">
-	<div class="col p-3 border border-1">
-		<%= link_to 'Leaders', leaders_path, class: 'btn btn-outline-primary btn-lg' %> goals, assists, points, wins, shutouts
+	<div class="col-3 p-3">
+		<div class="card" style="width: 18rem;">
+			<%= image_tag 'mcjesus1.png', class: 'card-img-top' %>
+			<div class="card-body">
+				<h5 class="card-title">Leaders</h5>
+				<p class="card-text text-muted">
+					goals, assists, points, wins, shutouts
+				</p>
+				<%= link_to 'go to leaders', leaders_path, class: 'btn btn-primary' %>
+			</div>
+		</div>
+	</div>
+	<div class="col-3 p-3">
+		<div class="card" style="width: 18rem;">
+			<%= image_tag 'mcjesus1.png', class: 'card-img-top' %>
+			<div class="card-body">
+				<h5 class="card-title">Players</h5>
+				<p class="card-text text-muted">
+					profile, season stats, regular season career stats, lorem ipsum 
+				</p>
+				<%= link_to 'go to players', players_path, class: 'btn btn-primary' %>
+			</div>
+		</div>
+	</div>
+	<div class="col-3 p-3">
+		<div class="card">
+			<%= image_tag 'mcjesus1.png', class: 'card-img-top', alt: 'whatever' %>
+			<div class="card-body">
+				<h5 class="card-title">Schedules</h5>
+				<p class="card-text text-muted">All schedules, or specific teams</p>
+				<%= link_to 'Schedules', schedule_index_path, class: 'btn btn-primary'  %>
+			</div>
+		</div>
 	</div>
 </div>
-
 <div class="row mt-3">
-  <div class="col border border-1 p-3"><%= link_to 'Players', players_path, class: 'btn btn-outline-primary btn-lg' %> - profile, season stats, regular season career stats, playoffs career stats, playoff stats by year</div>
-</div>
-
-<div class="row mt-3">
-  <div class="col border border-1 p-3"><%= link_to 'Schedules', schedule_index_path, class: 'btn btn-outline-primary btn-lg'  %> - all, specific team</div>
-</div>
-
-<div class="row mt-3">
-  <div class="col border border-1 p-3"><%= link_to 'Scores', scores_path, class: 'btn btn-outline-primary btn-lg' %> - today, yesterday, specific</div>
+	<div class="col border border-1 p-3"><%= link_to 'Scores', scores_path, class: 'btn btn-outline-primary btn-lg' %> - today, yesterday, specific</div>
 </div>
 <div class="row mt-3">
-  <div class="col border border-1 p-3"><%= link_to 'Standings', standings_path, class: 'btn btn-outline-primary btn-lg' %> - overall</div>
+	<div class="col border border-1 p-3"><%= link_to 'Standings', standings_path, class: 'btn btn-outline-primary btn-lg' %> - overall</div>
 </div>
 <div class="row mt-3">
-  <div class="col border border-1 p-3"><%= link_to 'Teams', teams_path, class: 'btn btn-outline-primary btn-lg' %> - all, roster, profile, stats</div>
+	<div class="col border border-1 p-3"><%= link_to 'Teams', teams_path, class: 'btn btn-outline-primary btn-lg' %> - all, roster, profile, stats</div>
 </div>
 <div class="row mt-3">
-  <div class="col border border-1 p-3">
-    <%= link_to 'Configurations', configurations_path, class: 'btn btn-outline-primary btn-lg' %>
-  </div>
+	<div class="col border border-1 p-3">
+		<%= link_to 'Configurations', configurations_path, class: 'btn btn-outline-primary btn-lg' %>
+	</div>
 </div>
-
