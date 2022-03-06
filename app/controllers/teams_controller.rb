@@ -10,6 +10,8 @@ class TeamsController < ApplicationController
     # render :json => JSON.pretty_generate(JSON.parse(@teams_direct))
     teams_json = JSON.parse(@teams_direct)
     @teams = teams_json['teams']
+    # data retrieval using ActiveResource ActiveRecord pattern
+     @something_else = Team.find(1)
   end
 
   def show
