@@ -1,0 +1,9 @@
+<div class="row">
+  <% @configs.each do |config| %>
+  <div class="col-4 border border-1">
+  <strong><%= config['description'] %></strong>
+  <p><%= config['endpoint'] %></p>
+  <p><%= link_to 'home', root_path, class: 'text-decoration-none' %></p>
+  </div>
+  <% end %>
+</div>
