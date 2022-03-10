@@ -4,6 +4,9 @@ class PlayersController < ApplicationController
   end
 
   def show
+    @celly_player = Celly::Player.new
+    @celly_player_profile = @celly_player.profile(params[:id])
+    @stats = @celly_player.season_stats(params[:id], 20192020)
     @player_data = RestClient.get("#{ENV['BASE']}/people/#{params[:id]}")
     @player_stats = RestClient.get("#{ENV['BASE']}/people/#{params[:id]}/stats/?stats=statsSingleSeason&season=20212022")
     # render json: JSON.pretty_generate(JSON.parse(@player_data))

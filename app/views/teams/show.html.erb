@@ -4,6 +4,7 @@
 		<th>name</th>
 		<th>number</th>
 		<th>position</th>
+		<th>id</th>
 	</tr>
 	<% @roster.each do |player| %>
 	<tr>
@@ -11,6 +12,3 @@
 	</tr>
 	<% end %>
 </table>
-<% @team.teams[0].attributes.each do |k,v| %>
-<p><%= "#{k}: #{v}" %></p>
-<% end%>

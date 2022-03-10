@@ -9,7 +9,7 @@ class TeamsController < ApplicationController
     teams_json = JSON.parse(@teams_direct)
     @teams = teams_json['teams']
     # data retrieval using ActiveResource ActiveRecord pattern
-    @something_else = Team.find(1)
+    @celly_teams = Celly::Team.new
   end
 
   def show

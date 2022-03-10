@@ -1,7 +1,8 @@
 <div class="row mt-3">
-	<div class="col-3 p-3">
-		<div class="card" style="width: 18rem;">
-			<%= image_tag 'mcjesus1.png', class: 'card-img-top' %>
+	<div class="col p-3 d-flex justify-content-center">
+		<div class="card h-100 shadow-sm">
+    <h5 class="card-header">Leaders</h5>
+			<%= image_tag 'mcjesus1.png', class: 'card-img-top, img-fluid' %>
 			<div class="card-body">
 				<h5 class="card-title">Leaders</h5>
 				<p class="card-text text-muted">
@@ -11,9 +12,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-3 p-3">
-		<div class="card" style="width: 18rem;">
-			<%= image_tag 'mcjesus1.png', class: 'card-img-top' %>
+	<div class="col p-3 d-flex justify-content-center">
+		<div class="card h-100">
+    <h5 class="card-header">Players</h5>
+			<%= image_tag 'mcjesus1.png', class: 'card-img-top, img-fluid' %>
 			<div class="card-body">
 				<h5 class="card-title">Players</h5>
 				<p class="card-text text-muted">
@@ -23,9 +25,10 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-3 p-3">
-		<div class="card">
-			<%= image_tag 'mcjesus1.png', class: 'card-img-top', alt: 'whatever' %>
+	<div class="col p-3 d-flex justify-content-center">
+		<div class="card h-100">
+    <h5 class="card-header">Schedules</h5>
+			<%= image_tag 'mcjesus1.png', class: 'card-img-top, img-fluid', alt: 'whatever' %>
 			<div class="card-body">
 				<h5 class="card-title">Schedules</h5>
 				<p class="card-text text-muted">All schedules, or specific teams</p>
@@ -33,18 +36,50 @@
 			</div>
 		</div>
 	</div>
+	<div class="col p-3 d-flex justify-content-center">
+		<div class="card h-100">
+			<h5 class="card-header">Configurations</h5>
+			<%= image_tag 'mcjesus1.png', class: 'card-img-top, img-fluid', alt: 'mcjesus' %>
+			<div class="card-body">
+				<h5 class="card-title">Configuration Endpoints</h5>
+				<p class="card-text text-muted">description and path to configuration endpoints</p>
+				<%= link_to 'Configurations', configurations_path, class: 'btn btn-primary' %>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="row mt-3">
-	<div class="col border border-1 p-3"><%= link_to 'Scores', scores_path, class: 'btn btn-outline-primary btn-lg' %> - today, yesterday, specific</div>
-</div>
-<div class="row mt-3">
-	<div class="col border border-1 p-3"><%= link_to 'Standings', standings_path, class: 'btn btn-outline-primary btn-lg' %> - overall</div>
-</div>
-<div class="row mt-3">
-	<div class="col border border-1 p-3"><%= link_to 'Teams', teams_path, class: 'btn btn-outline-primary btn-lg' %> - all, roster, profile, stats</div>
-</div>
-<div class="row mt-3">
-	<div class="col border border-1 p-3">
-		<%= link_to 'Configurations', configurations_path, class: 'btn btn-outline-primary btn-lg' %>
+	<div class="col p-3 d-flex justify-content-center">
+		<div class="card h-100">
+			<h5 class="card-header">Scores</h5>
+			<%= image_tag 'mcjesus1.png', class: 'card-img-top, img-fluid', alt: 'whatever' %>
+			<div class="card-body">
+				<div class="card-title">Scores</div>
+				<p class="card-text text-muted">today, yesterday, specific</p>
+				<%= link_to 'Scores', scores_path, class: 'btn btn-primary' %>
+			</div>
+		</div>
+	</div>
+	<div class="col p-3 d-flex justify-content-center">
+		<div class="card h-100">
+			<h5 class="card-header">Standings</h5>
+			<%= image_tag 'mcjesus1.png', class: 'card-img-top, img-fluid' %>
+			<div class="card-body">
+				<div class="card-title">Standings</div>
+				<p class="card-text text-muted">Arranged by division</p>
+				<%= link_to 'Standings', standings_path, class: 'btn btn-primary' %>
+			</div>
+		</div>
+	</div>
+	<div class="col p-3 d-flex justify-content-center">
+		<div class="card h-100">
+			<h5 class="card-header">Teams</h5>
+			<%= image_tag 'mcjesus1.png', class: 'card-img-top, img-fluid', alt: 'what' %>
+			<div class="card-body">
+				<div class="card-title">Teams</div>
+				<p class="card-text text-muted">rosters, profile, franchise</p>
+				<%= link_to 'Teams', teams_path, class: 'btn btn-primary' %>
+			</div>
+		</div>
 	</div>
 </div>
