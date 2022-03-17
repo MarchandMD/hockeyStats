@@ -1,8 +1,18 @@
-<%# @json_response %>
-<div class="row" id="leaders">
-	<% @leaders.each do |player| %>
-		<div class="col">
-			<%= player['person']['fullName'] %>
-		</div>
-	<% end %>
+<div class="row">
+	<div class="col-6 border border-1"><div class="row"><div class="col border border-1">Goals</div></div></div>
 </div>
+<div class="row">
+	<div class="col">
+		<% @in_goals[:data][0]['leaders'].each do |leader|  %>
+			<table class="table p-3">
+				<td class="p-3"><%= leader['rank'] %></td>
+				<td class="p-3"><%= leader['value'] %></td>
+				<td class="p-3"><%= leader %></td>
+			</table>
+		<% end%>
+		<div class="row">
+			<div class="col">FORM GOES HERE; do the thing where I select a year, and it pulls up the leaders in goals; i'm going to be passing params from the form, to the method; I don't think i'm required to have a model; just to be able to call the Celly method with the params provided by the form</div>
+		</div>
+	</div>
+</div>
+

@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
-			<%= link_to 'Back to Full Roster', team_path(@player['currentTeam']['id']) %>
-		</div>
+		<%= link_to 'Back to Full Roster', team_path(@profile['currentTeam']['id']) %>
+	</div>
 </div>
 <table class="table">
 	<tr>
@@ -12,11 +12,11 @@
 		<th>last</th>
 		<th>number</th>
 		<th>birthdate</th>
-		<th>stats</th>
 	</tr>
 	<tr>
 		<%= render partial: 'player' %>
 	</tr>
 </table>
-<div class="row border border-1 p-3"><%= @celly_player_profile[:data][0]['currentTeam'] %></div>
-<div class="row"><%= @stats  %></div>
+<div class="row">
+	<%= render partial: 'stats' %>
+</div>

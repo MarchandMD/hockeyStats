@@ -3,9 +3,8 @@ class ScoresController < ApplicationController
   require 'json'
 
   def index
-    @today = RestClient.get 'https://statsapi.web.nhl.com/api/v1/schedule'
-    @today = process_json(@today)
-    # render json: JSON.pretty_generate(@today)
+    @scores = Celly::Scores.new
+    @today = @scores.today[:data]
   end
 
   private

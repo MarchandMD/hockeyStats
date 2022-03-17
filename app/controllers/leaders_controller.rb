@@ -3,8 +3,7 @@ class LeadersController < ApplicationController
   require 'json'
 
   def index
-    response = RestClient.get('https://statsapi.web.nhl.com/api/v1/stats/leaders?leaderCategories=goals&season=20212022')
-    json = JSON.parse(response)
-    @leaders = json['leagueLeaders'][0]['leaders']
+    @leaders = Celly::Leaders.new
+    @in_goals = @leaders.goals(20072008)
   end
 end
