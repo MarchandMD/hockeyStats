@@ -1,0 +1,7 @@
+<% @in_goals[:data][0]['leaders'].each do |leader|  %>
+				<tr>
+					<td class="p-3"><%= leader['rank'] %></td>
+					<td class="p-3"><%= leader['value'] %></td>
+					<td class="p-3"><%= leader['person']['fullName'] %></td>
+				</tr>
+			<% end%>

@@ -1,85 +1,18 @@
-<div class="row mt-3">
-	<div class="col p-3 d-flex justify-content-center">
-		<div class="card h-100 shadow-sm">
-    <h5 class="card-header">Leaders</h5>
-			<%= image_tag 'mcjesus1.png', class: 'card-img-top, img-fluid' %>
-			<div class="card-body">
-				<h5 class="card-title">Leaders</h5>
-				<p class="card-text text-muted">
-					goals, assists, points, wins, shutouts
-				</p>
-				<%= link_to 'go to leaders', leaders_path, class: 'btn btn-primary' %>
-			</div>
-		</div>
-	</div>
-	<div class="col p-3 d-flex justify-content-center">
-		<div class="card h-100">
-    <h5 class="card-header">Players</h5>
-			<%= image_tag 'mcjesus1.png', class: 'card-img-top, img-fluid' %>
-			<div class="card-body">
-				<h5 class="card-title">Players</h5>
-				<p class="card-text text-muted">
-					profile, season stats, regular season career stats, lorem ipsum 
-				</p>
-				<%= link_to 'go to players', players_path, class: 'btn btn-primary' %>
-			</div>
-		</div>
-	</div>
-	<div class="col p-3 d-flex justify-content-center">
-		<div class="card h-100">
-    <h5 class="card-header">Schedules</h5>
-			<%= image_tag 'mcjesus1.png', class: 'card-img-top, img-fluid', alt: 'whatever' %>
-			<div class="card-body">
-				<h5 class="card-title">Schedules</h5>
-				<p class="card-text text-muted">All schedules, or specific teams</p>
-				<%= link_to 'Schedules', schedule_index_path, class: 'btn btn-primary'  %>
-			</div>
-		</div>
-	</div>
-	<div class="col p-3 d-flex justify-content-center">
-		<div class="card h-100">
-			<h5 class="card-header">Configurations</h5>
-			<%= image_tag 'mcjesus1.png', class: 'card-img-top, img-fluid', alt: 'mcjesus' %>
-			<div class="card-body">
-				<h5 class="card-title">Configuration Endpoints</h5>
-				<p class="card-text text-muted">description and path to configuration endpoints</p>
-				<%= link_to 'Configurations', configurations_path, class: 'btn btn-primary' %>
-			</div>
-		</div>
-	</div>
+<div class="container">
+  <div class="row m-2">
+    <div class="col m-1 d-flex justify-content-center">
+      <ul class="list-group list-unstyled">
+        <li>
+          <%= link_to 'Leaders', leaders_path, class: 'list-group-item list-group-item-action' %>
+        </li>
+        <li><%= link_to 'Players', players_path, class: 'list-group-item list-group-item-action' %></li>
+        <li><%= link_to 'Schedule', schedule_index_path, class: 'list-group-item list-group-item-action' %></li>
+        <li><%= link_to 'configuration', configurations_path, class: 'list-group-item list-group-item-action' %></li>
+        <li><%= link_to 'Scores', scores_path, class: 'list-group-item list-group-item-action' %></li>
+        <li><%= link_to 'Standings', standings_path, class: 'list-group-item list-group-item-action' %></li>
+        <li><%= link_to 'Teams', teams_path, class: 'list-group-item list-group-item-action' %></li>
+      </ul>
+    </div>
+  </div>
 </div>
-<div class="row mt-3">
-	<div class="col p-3 d-flex justify-content-center">
-		<div class="card h-100">
-			<h5 class="card-header">Scores</h5>
-			<%= image_tag 'mcjesus1.png', class: 'card-img-top, img-fluid', alt: 'whatever' %>
-			<div class="card-body">
-				<div class="card-title">Scores</div>
-				<p class="card-text text-muted">today, yesterday, specific</p>
-				<%= link_to 'Scores', scores_path, class: 'btn btn-primary' %>
-			</div>
-		</div>
-	</div>
-	<div class="col p-3 d-flex justify-content-center">
-		<div class="card h-100">
-			<h5 class="card-header">Standings</h5>
-			<%= image_tag 'mcjesus1.png', class: 'card-img-top, img-fluid' %>
-			<div class="card-body">
-				<div class="card-title">Standings</div>
-				<p class="card-text text-muted">Arranged by division</p>
-				<%= link_to 'Standings', standings_path, class: 'btn btn-primary' %>
-			</div>
-		</div>
-	</div>
-	<div class="col p-3 d-flex justify-content-center">
-		<div class="card h-100">
-			<h5 class="card-header">Teams</h5>
-			<%= image_tag 'mcjesus1.png', class: 'card-img-top, img-fluid', alt: 'what' %>
-			<div class="card-body">
-				<div class="card-title">Teams</div>
-				<p class="card-text text-muted">rosters, profile, franchise</p>
-				<%= link_to 'Teams', teams_path, class: 'btn btn-primary' %>
-			</div>
-		</div>
-	</div>
-</div>
+

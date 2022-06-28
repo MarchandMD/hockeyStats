@@ -1,0 +1,35 @@
+<div class="display-5">
+	Predictions Form
+</div>
+<%= form_with model: @prediction, url: predictions_path, local: true do |f| %>
+	<div class="row">
+		<%= f.label :name, class: 'col-sm-2 col-form-label' %>
+		<div class='col-10'><%= f.text_field :name, class: 'form-control' %></div>
+	</div>
+	<%= f.submit %>
+<% end %>
+<div class="row p-3 border">
+	<div class="col border p-3">
+		<p>Alright so in the next row I want to begin to add a form that shows a question, and then the option to provide/select an answer</p>
+	</div>
+</div>
+<div class="row border p-3">
+	<%= form_with model: @prediction, url: predictions_path, local: true do |f| %>
+	<div class="row border p-3">
+		<div class="col-sm-2">
+    Question #1:
+		</div>
+		<div class="col-sm-10">
+    Who will win tonights game?
+		</div>
+	</div>
+	<div class="row border p-3">
+		<div class="col-sm-2">
+    Response #1:
+		</div>
+		<div class="col-sm-10">
+    <%= f.select :winner, ["home team", "away team"] %>
+		</div>
+	</div>
+  <% end %>
+</div>

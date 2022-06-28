@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :schedule, only: [:index]
   resources :scores, only: [:index]
   resources :configurations, only: [:index]
-
+  resources :predictions
 end
