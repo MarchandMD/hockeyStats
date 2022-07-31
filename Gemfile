@@ -67,3 +67,4 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'activeresource', '~> 5.1.0'
+gem 'pry', '~> 0.14.1'

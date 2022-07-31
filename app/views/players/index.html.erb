@@ -1,9 +1,52 @@
-
-<h1>type the name of the player to get their stats:</h1>
-<%= form_with scope: :player, method: :get , url: player_path(id = 8478402), local: true do |form| %>
-<%= form.label :player_name %>
-<%= form.text_field :player_name  %>
-<br>
-<%= form.submit 'submit' %>
-<% end %>
-
+<div class="row">
+  <div class="col-6">
+    <div>id</div>
+    <div>fullName</div>
+    <div>link</div>
+    <div>firstName</div>
+    <div>lastName</div>
+    <div>primaryNumber</div>
+    <div>birthDate</div>
+    <div>currentAge</div>
+    <div>birthCity</div>
+    <div>birthStateProvince</div>
+    <div>birthCountry</div>
+    <div>nationality</div>
+    <div>height</div>
+    <div>weight</div>
+    <div>active</div>
+    <div>alternateCaptain</div>
+    <div>captain</div>
+    <div>rookie</div>
+    <div>shootsCatches</div>
+    <div>rosterStatus</div>
+    <div>currentTeam</div>
+    <div>primaryPostion</div>
+  </div>
+  <div class="col-6">
+    <% @data["people"].each do |x| %>
+      <div><%= x['id'] %></div>
+      <div><%= x['fullName'] %></div>
+      <div><%= x['link'] %></div>
+      <div><%= x['firstName'] %></div>
+      <div><%= x['lastName'] %></div>
+      <div><%= x['primaryNumber'] %></div>
+      <div><%= x['birthDate'] %></div>
+      <div><%= x['currentAge'] %></div>
+      <div><%= x['birthCity'] %></div>
+      <div><%= x['birthStateProvince'] %></div>
+      <div><%= x['birthCountry'] %></div>
+      <div><%= x['nationality'] %></div>
+      <div><%= x['height'] %></div>
+      <div><%= x['weight'] %></div>
+      <div><%= x['active'] %></div>
+      <div><%= x['alternateCaptain'] %></div>
+      <div><%= x['captain'] %></div>
+      <div><%= x['rookie'] %></div>
+      <div><%= x['shootsCatches'] %></div>
+      <div><%= x['rosterStatus'] %></div>
+      <div><%= x['currentTeam'] %></div>
+      <div><%= x['primaryPostion'] %></div>
+    <% end %>
+  </div>
+</div>

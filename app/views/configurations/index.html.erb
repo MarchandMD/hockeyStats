@@ -1,9 +1,12 @@
 <div class="row">
-  <% @configs.each do |config| %>
-  <div class="col-4 border border-1">
-  <strong><%= config['description'] %></strong>
-  <p><%= config['endpoint'] %></p>
-  <p><%= link_to 'home', root_path, class: 'text-decoration-none' %></p>
+  <div class="col">
+  <h3>Base:</h3><p>https://statsapi.web.nhl.com</p>
+    <ul class="list-unstyled">
+      <% @configs.each do |config| %>
+        <li class="mb-3">
+          <strong><%= "#{config['description']}: " %></strong> <%= "#{config['endpoint']}"  %>
+        </li>
+      <% end %>
+    </ul>
   </div>
-  <% end %>
 </div>

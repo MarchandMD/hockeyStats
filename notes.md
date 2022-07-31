@@ -1,1 +1,3 @@
 I don't like the cards; Maybe just make it a list...
+
+Rails console

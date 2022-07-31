@@ -4,12 +4,10 @@ class TeamsController < ApplicationController
   require 'dotenv/load'
 
   def index
-    @teams_direct = RestClient.get("#{ENV['BASE']}/teams")
+    @teams = RestClient.get("#{ENV['BASE']}/teams")
     # render :json => JSON.pretty_generate(JSON.parse(@teams_direct))
-    teams_json = JSON.parse(@teams_direct)
-    @teams = teams_json['teams']
-    # data retrieval using ActiveResource ActiveRecord pattern
-    @celly_teams = Celly::Team.new
+    @teams = JSON.parse(@teams)
+    @teams = @teams['teams']
   end
 
   def show
