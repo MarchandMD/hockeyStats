@@ -3,8 +3,9 @@ class ScoresController < ApplicationController
   require 'json'
 
   def index
-    @scores = Celly::Scores.new
-    @today = @scores.today[:data]
+    # need to find correct endpoint
+    @game_types = RestClient.get "#{ENV['BASE']}/playTypes"
+    @today = JSON.parse(@game_types.body)
   end
 
   private

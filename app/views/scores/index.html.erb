@@ -1,13 +1,1 @@
-<% @today[0]['games'].each do |game| %>
-	<div class="row">
-		<div class="col border border-1">
-			<%=  game['teams']['away']['team']['name'] %>
-			<%=  game['teams']['away']['score'] %>
-      <p>vs</p>
-			<%=  game['teams']['home']['team']['name'] %>
-			<%=  game['teams']['home']['score'] %>
-		</div>
-	</div>
-<% end %>
-<div class="row">
-</div>
+<%= @game_types  %>

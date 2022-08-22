@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'links/index'
+  get 'about/index'
   root to: 'welcome#index'
   resources :teams, only: %i[index show]
   resources :players, only: %i[index show]

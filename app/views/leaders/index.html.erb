@@ -1,31 +1,150 @@
+<%# there is a _goals_leaders partial if needed %>
 <div class="row">
-  <div class="col-6">
-    <table class="table table-sm p-3 d-flex justify-content-center">
-      <tr>
-        <td>Goals</td>
-      </tr>
-      <tr>
-        <th>Rank</th>
-        <th>Goals</th>
-        <th>Player</th>
-      </tr>
-      <%= render 'partials/goal_leaders' %>
+  <div class="col-sm-12 col-lg-3">
+    <h2>Goals</h2>
+    <table class="table-sm">
+      <% @goals["leagueLeaders"].first['leaders'].collect do |player|  %>
+        <tr>
+          <td>
+            <%= "#{player['rank']}. #{ player["person"]['fullName']} - #{player['value']}" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="col-sm-12 col-lg-3">
+    <h2>savePct</h2>
+    <table class="table-sm">
+      <% @savePct["leagueLeaders"].first['leaders'].collect do |player|  %>
+        <tr>
+          <td>
+            <%= "#{player['rank']}. #{ player["person"]['fullName']} - #{player['value']}" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="col-sm-12 col-lg-3">
+    <h2>shutouts</h2>
+    <table class="table-sm">
+      <% @shutouts["leagueLeaders"].first['leaders'].collect do |player|  %>
+        <tr>
+          <td>
+            <%= "#{player['rank']}. #{ player["person"]['fullName']} - #{player['value']}" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="col-sm-12 col-lg-3">
+    <h2>assists</h2>
+    <table class="table-sm">
+      <% @assists["leagueLeaders"].first['leaders'].collect do |player|  %>
+        <tr>
+          <td>
+            <%= "#{player['rank']}. #{ player["person"]['fullName']} - #{player['value']}" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 col-lg-3">
+    <h2>gaa</h2>
+    <table class="table-sm">
+      <% @gaa["leagueLeaders"].first['leaders'].collect do |player|  %>
+        <tr>
+          <td>
+            <%= "#{player['rank']}. #{ player["person"]['fullName']} - #{player['value']}" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="col-sm-12 col-lg-3">
+    <h2>plusMinus</h2>
+    <table class="table-sm">
+      <% @plusMinus["leagueLeaders"].first['leaders'].collect do |player|  %>
+        <tr>
+          <td>
+            <%= "#{player['rank']}. #{ player["person"]['fullName']} - #{player['value']}" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="col-sm-12 col-lg-3">
+    <h2>points</h2>
+    <table class="table-sm">
+      <% @points["leagueLeaders"].first['leaders'].collect do |player|  %>
+        <tr>
+          <td>
+            <%= "#{player['rank']}. #{ player["person"]['fullName']} - #{player['value']}" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="col-sm-12 col-lg-3">
+    <h2>powerPlayGoals</h2>
+    <table class="table-sm">
+      <% @powerPlayGoals["leagueLeaders"].first['leaders'].collect do |player|  %>
+        <tr>
+          <td>
+            <%= "#{player['rank']}. #{ player["person"]['fullName']} - #{player['value']}" %>
+          </td>
+        </tr>
+      <% end %>
     </table>
   </div>
 </div>
 
 <div class="row">
-  <div class="col">FORM GOES HERE; do the thing where I select a year, and it pulls up the leaders in goals; i'm going to be passing params from the form, to the method; I don't think i'm required to have a model; just to be able to call the Celly method with the params provided by the form
-	</div>
-
+  <h2>points</h2>
+  <% @points["leagueLeaders"].first['leaders'].collect do |player|  %>
+    <div class=''><%= "#{player['rank']}. #{ player["person"]['fullName']} - #{player['value']}" %></div>
+  <% end %>
 </div>
-
 <div class="row">
-	<div class="col">
-		<%= form_tag "/leaders", method: :get do  %>
-		<% seasons = (2000..2022).to_a %>
-			<%= select_tag "season", options_for_select(seasons.reverse) %>
-			<%= submit_tag 'submit' %>
-		<% end %>
-	</div>
+  <h2>powerPlayGoals</h2>
+  <% @powerPlayGoals["leagueLeaders"].first['leaders'].collect do |player|  %>
+    <div class=''><%= "#{player['rank']}. #{ player["person"]['fullName']} - #{player['value']}" %></div>
+  <% end %>
+</div>
+<div class="row">
+  <h2>shortHandedGoals</h2>
+  <% @shortHandedGoals["leagueLeaders"].first['leaders'].collect do |player|  %>
+    <div class=''><%= "#{player['rank']}. #{ player["person"]['fullName']} - #{player['value']}" %></div>
+  <% end %>
+</div>
+<div class="row">
+  <h2>timeOnIcePerGame</h2>
+  <% @timeOnIcePerGame["leagueLeaders"].first['leaders'].collect do |player|  %>
+    <div class=''><%= "#{player['rank']}. #{ player["person"]['fullName']} - #{player['value']}" %></div>
+  <% end %>
+</div>
+<div>
+  [
+  "gaa",
+  "goals",
+  "assists",
+  "plusMinus",
+  "points",
+  "powerPlayGoals",
+  "shortHandedGoals",
+  "timeOnIcePerGame",
+  "faceOffPct",
+  "otLosses",
+  "losses",
+  "shortHandedAssists",
+  "pointsPerGame",
+  "powerPlayPoints",
+  "shootingPctg",
+  "hits",
+  "shortHandedPoints",
+  "penaltyMinutes",
+  "shots",
+  "powerPlayAssists",
+  "gameWinningGoals"]
 </div>

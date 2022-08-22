@@ -1,11 +1,11 @@
 <div class="row">
-  <div class="col-4">
+  <div class="col-sm-12 col-md-6">
     <%= @data['people'][0]['fullName'] %>
   </div>
 </div>
 <div class="row">
-  <div class="col">
-    <table class="table">
+  <div class="col-sm-12 col-md-6">
+    <table class="table-sm">
       <tr>
         <th>year</th>
         <th>Team</th>
@@ -16,6 +16,7 @@
       </tr>
       <% @stats['stats'][0]['splits'].reverse.each do |year| %>
         <tr>
+        <% if year['league']['name'] == "National Hockey League" %>
           <td>
             <% year1 = year['season'].chomp[0..3]%>
             <% year2 = year['season'].chomp[-4..-1]%>
@@ -28,8 +29,13 @@
           <td><%= year['stat']['assists'] %></td>
           <td><%= year['stat']['points'] %></td>
           <td><%= year['stat']['timeOnIce'] %></td>
+          <%  end %>
         </tr>
       <% end %>
     </table>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <%= keys = @stats['stats'][0]['splits'][8]['stat'].keys %>
+    
   </div>
 </div>

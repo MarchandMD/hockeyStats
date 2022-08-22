@@ -8,5 +8,6 @@ class StandingsController < ApplicationController
     # render :json => JSON.pretty_generate(JSON.parse(@net_standings))
     @standings = JSON.parse(@standings)
     # require 'pry'; binding pry
+    
   end
 end

@@ -5,15 +5,16 @@
 </div>
 <div class="container">
   <div class="row p-4">
-    <div class="col-sm-12 col-md-6 d-flex flex-column align-items-center mb-3">
+    <div class="col-sm-12 col-md-6 d-flex flex-column align-items-center">
       <h2>Western</h2>
       <% western = []%>
-      <% @teams.each do |team_hash| %>
-        <% western << team_hash if team_hash['conference']['name'] == 'Western' %>
+      <% @teams.each do |team| %>
+        <% western << team if team['conference']['name'] == 'Western' %>
       <% end %>
-      <% western = western.sort_by { |team_hash| team_hash['name'] }%>
+      <% western = western.sort_by { |team| team['name'] }%>
       <% western.each do |team| %>
         <div class="pt-1">
+          <%= link_to image_tag("https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{team['id']}.svg", :size => "50x40"), team_path(team['id']) %>
           <%= link_to "#{team['name']}", team_path(team['id']), class: "text-decoration-none" %>
         </div>
       <% end %>
@@ -21,12 +22,13 @@
     <div class="col-sm-12 col-md-6 d-flex flex-column align-items-center">
       <h2>Eastern</h2>
       <% eastern = []%>
-      <% @teams.each do |team_hash| %>
-        <% eastern << team_hash if team_hash['conference']['name'] == 'Eastern' %>
+      <% @teams.each do |team| %>
+        <% eastern << team if team['conference']['name'] == 'Eastern' %>
       <% end %>
-      <% eastern = eastern.sort_by { |team_hash| team_hash['name'] }%>
+      <% eastern = eastern.sort_by { |team| team['name'] }%>
       <% eastern.each do |team| %>
         <div class="pt-1">
+          <%= link_to image_tag("https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{team['id']}.svg", :size => "50x40"), team_path(team['id']) %>
           <%= link_to "#{team['name']}", team_path(team['id']), class: "text-decoration-none" %>
         </div>
       <% end %>
@@ -44,8 +46,10 @@
       <% eastern.each do |team| %>
         <% metropolitan << team if team['division']['name'] == 'Metropolitan'%>
       <% end %>
-      <% metropolitan.each do |team_hash| %>
-        <div><%= link_to "#{team_hash['name']}", team_path(team_hash['id']), class: "text-decoration-none" %></div>
+      <% metropolitan.each do |team| %>
+        <div>
+          <%= link_to image_tag("https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{team['id']}.svg", :size => "50x40"), team_path(team['id']) %>
+          <%= link_to "#{team['name']}", team_path(team['id']), class: "text-decoration-none" %></div>
       <% end %>
     </div>
     <div class="col-sm-12 col-md-6 d-flex flex-column align-items-center pb-3">
@@ -54,8 +58,10 @@
       <% eastern.each do |team| %>
         <% atlantic << team if team['division']['name'] == 'Atlantic'%>
       <% end %>
-      <% atlantic.each do |team_hash| %>
-        <div><%= link_to "#{team_hash['name']}", team_path(team_hash['id']), class: "text-decoration-none" %></div>
+      <% atlantic.each do |team| %>
+        <div>
+          <%= link_to image_tag("https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{team['id']}.svg", :size => "50x40"), team_path(team['id']) %>
+          <%= link_to "#{team['name']}", team_path(team['id']), class: "text-decoration-none" %></div>
       <% end %>
     </div>
   </div>
@@ -68,8 +74,10 @@
       <% western.each do |team| %>
         <% central << team if team['division']['name'] == 'Central'%>
       <% end %>
-      <% central.each do |team_hash| %>
-        <div><%= link_to "#{team_hash['name']}", team_path(team_hash['id']), class: "text-decoration-none" %></div>
+      <% central.each do |team| %>
+        <div>
+          <%= link_to image_tag("https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{team['id']}.svg", :size => "50x40"), team_path(team['id']) %>
+          <%= link_to "#{team['name']}", team_path(team['id']), class: "text-decoration-none" %></div>
       <% end %>
     </div>
     <div class="col-sm-12 col-md-6 d-flex flex-column align-items-center">
@@ -78,8 +86,10 @@
       <% western.each do |team| %>
         <% pacific << team if team['division']['name'] == 'Pacific'%>
       <% end %>
-      <% pacific.each do |team_hash| %>
-        <div><%= link_to "#{team_hash['name']}", team_path(team_hash['id']), class: "text-decoration-none" %></div>
+      <% pacific.each do |team| %>
+        <div>
+          <%= link_to image_tag("https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{team['id']}.svg", :size => "50x40"), team_path(team['id']) %>
+          <%= link_to "#{team['name']}", team_path(team['id']), class: "text-decoration-none" %></div>
       <% end %>
     </div>
   </div>
