@@ -75,3 +75,5 @@ gem "pry-rails", "~> 0.3.9"
 gem "simplecov", "~> 0.21.2"
 
 gem "shoulda-matchers", "~> 5.2", :groups => [:development, :test]
+
+gem "httparty", "~> 0.20.0"
