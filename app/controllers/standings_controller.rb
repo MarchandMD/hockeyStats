@@ -7,7 +7,5 @@ class StandingsController < ApplicationController
     @standings = Net::HTTP.get(uri)
     # render :json => JSON.pretty_generate(JSON.parse(@net_standings))
     @standings = JSON.parse(@standings)
-    # require 'pry'; binding pry
-    
   end
 end
