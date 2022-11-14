@@ -7,6 +7,7 @@
   <div class="row p-4">
     <div class="col-sm-12 col-md-6 d-flex flex-column align-items-center">
       <h2>Western</h2>
+      <%# binding.pry %>
       <% western = []%>
       <% @teams.each do |team| %>
         <% western << team if team['conference']['name'] == 'Western' %>
