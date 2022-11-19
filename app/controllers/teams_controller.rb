@@ -12,10 +12,9 @@ class TeamsController < ApplicationController
 
   def show
     roster_modifier = '?expand=team.roster'
-    @team_data = RestClient.get("#{ENV['BASE']}/teams/#{params[:id]}#{roster_modifier}")
-    # render json: JSON.pretty_generate(JSON.parse(@team_data))
-    @team_json = JSON.parse(@team_data)
-    @roster = @team_json['teams'][0]['roster']['roster']
-    @team = Team.find(params[:id])
+    @team = RestClient.get("#{ENV['BASE']}/teams/#{params[:id]}#{roster_modifier}")
+    # render json: JSON.pretty_generate(JSON.parse(@team))
+    @team= JSON.parse(@team)
+    @roster = @team['teams'][0]['roster']['roster']
   end
 end

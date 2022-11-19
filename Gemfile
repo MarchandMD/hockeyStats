@@ -68,3 +68,12 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'activeresource', '~> 5.1.0'
 gem 'pry', '~> 0.14.1'
+gem "awesome_print", "~> 1.9"
+
+gem "pry-rails", "~> 0.3.9"
+
+gem "simplecov", "~> 0.21.2"
+
+gem "shoulda-matchers", "~> 5.2", :groups => [:development, :test]
+
+gem "httparty", "~> 0.20.0"

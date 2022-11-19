@@ -1,8 +1,28 @@
 <div class="row">
   <% @standings['records'].each do |division| %>
+    <% teamRecords_keys = division['teamRecords'][0].keys %>
     <div class="col-sm-12 col-md-6 d-flex flex-column align-items-center">
       <h2><%= division['division']['name'] %> </h2>
-			<%= division['teamRecords'][0].keys %>
+      <table class="table table-sm table-striped">
+        <tr>
+          <th></th>
+          <th>team</th>
+          <th>pts</th>
+          <th>wins</th>
+          <th>losses</th>
+          <th>ot</th>
+        </tr>
+        <% division['teamRecords'].each do |team| %>
+          <tr>
+            <td><%=link_to image_tag("https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{team['team']['id']}.svg", :size => "40x30"), team_path(team['team']['id']) %></td>
+            <td><%= "#{team['divisionRank']}. #{} #{ team['team']['name']}" %></td>
+            <td><%= team['points'] %></td>
+            <td><%= team['leagueRecord']['wins'] %></td>
+            <td><%= team['leagueRecord']['losses'] %></td>
+            <td><%= team['leagueRecord']['ot'] %></td>
+          </tr>
+        <% end %>
+      </table>
     </div>
   <% end %>
 </div>

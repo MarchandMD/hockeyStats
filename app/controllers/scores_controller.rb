@@ -1,17 +1,8 @@
 class ScoresController < ApplicationController
-  require 'rest-client'
-  require 'json'
 
   def index
-    @scores = Celly::Scores.new
-    @today = @scores.today[:data]
+    score = ScoreSearch.new.game_info
+    @away = score[0][1]
+    @home = score[1][1]
   end
-
-  private
-
-  def process_json(h)
-    h = JSON.parse(h)
-    h.transform_keys!(&:to_sym)
-  end
-
 end

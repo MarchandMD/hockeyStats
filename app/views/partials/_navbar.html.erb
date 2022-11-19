@@ -12,8 +12,14 @@
 				<li class="nav-item">
 				<%= link_to "home", root_path, class: 'nav-link' %>
 				</li>
+        <li class="nav-item">
+					<%= link_to "about", about_index_path, class: "nav-link" %>
+				</li>
+        <li class="nav-item">
+					<%= link_to "links", links_index_path, class: "nav-link" %>
+				</li>
 				<li class="nav-item">
-					<%= link_to "leaders", leaders_path, class: "nav-link disabled" %>
+					<%= link_to "leaders", leaders_path, class: "nav-link" %>
 				</li>
 				<li class="nav-item">
 					<%= link_to 'players', players_path, class: "nav-link disabled" %>
@@ -22,7 +28,7 @@
 					<%= link_to 'schedules', schedule_index_path, class: "nav-link disabled" %>
 				</li>
 				<li class="nav-item">
-					<%= link_to 'scores', scores_path, class: "nav-link disabled" %>
+					<%= link_to 'scores', scores_path, class: "nav-link" %>
 				</li>
 				<li class="nav-item">
 					<%= link_to 'standings', standings_path, class: "nav-link" %>
