@@ -6,7 +6,7 @@
   </tr>
   <% @roster.each do |player| %>
     <tr>
-      <td><%= link_to player.fullName %></td>
+      <td><%= link_to player.fullName, team_player_path(params[:team_id], player.id) %></td>
       <td><%= player.id %></td>
       <td><%= player.link %></td>
     </tr>
