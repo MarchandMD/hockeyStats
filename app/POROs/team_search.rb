@@ -2,11 +2,16 @@ require './app/services/nhlapi_services'
 require './app/poros/team'
 
 class TeamSearch
-  def team_info
-    service.teams[:teams].map do |data|
-      Team.new(data)
+  def teams_info
+    teams = service.teams
+    teams[:teams].map do |team_hash|
+      Team.new(team_hash)
     end
+  end
 
+  def team_info(id)
+    team = service.team(id)
+    team = Team.new(team[:teams][0])
   end
 
   def service

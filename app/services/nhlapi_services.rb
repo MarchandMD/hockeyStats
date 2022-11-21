@@ -5,6 +5,14 @@ class NhlApiService
     get_url("https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster")
   end
 
+  def team(id)
+    get_url("https://statsapi.web.nhl.com/api/v1/teams/#{id}")
+  end
+
+  def roster(id)
+    get_url("https://statsapi.web.nhl.com/api/v1/teams/#{id}/roster")
+  end
+
   def season_json_data
     get_url("https://statsapi.web.nhl.com/api/v1/seasons/current")
   end
