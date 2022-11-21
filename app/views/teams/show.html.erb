@@ -1,25 +1,7 @@
 <div class="row">
-  <div class="col-sm-12 d-flex flex-column align-items-center">
-    <%= link_to image_tag("https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{@team['teams'][0]['id']}.svg", :size => "200x190"), team_path(@team['teams'][0]['id']) %>
-    <h1><%= "#{@team['teams'][0]['name']} Roster" %></h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-lg-6">
-    <table class="table-sm">
-		<h3>Roster</h3>
-      <tr>
-        <th>Name</th>
-        <th>Number</th>
-        <th>Position</th>
-      </tr>
-      <% @roster.each do |player| %>
-        <tr>
-          <td><%= link_to "#{player['person']['fullName']}", player_path(player['person']['id']) %></td>
-          <td><%= player['jerseyNumber'] %></td>
-          <td><%= player['position']['abbreviation'] %></td>
-        </tr>
-      <% end %>
-    </table>
+  <div class="col">
+    <h1><%= @team.name %></h1>
+    <h4>Venue: <%= @team.venue[:name] %></h4>
+    <p><%= link_to 'roster', team_players_path(@team.id)  %></p>
   </div>
 </div>

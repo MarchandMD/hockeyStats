@@ -1,0 +1,14 @@
+<table class="table table-striped">
+  <tr>
+    <th>player</th>
+    <th>id</th>
+    <th>link</th>
+  </tr>
+  <% @roster.each do |player| %>
+    <tr>
+      <td><%= link_to player.fullName %></td>
+      <td><%= player.id %></td>
+      <td><%= player.link %></td>
+    </tr>
+  <% end %>
+</table>
