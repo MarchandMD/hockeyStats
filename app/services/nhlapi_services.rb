@@ -21,6 +21,10 @@ class NhlApiService
     get_url("https://statsapi.web.nhl.com/api/v1/game/2022020001/boxscore")
   end
 
+  def player(id)
+    get_url("https://statsapi.web.nhl.com/api/v1/people/#{id}/stats?stats=yearByYear")
+  end
+
   def get_url(url)
     response = HTTParty.get(url)
     JSON.parse(response.body, symbolize_names: true)
