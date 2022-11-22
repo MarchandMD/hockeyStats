@@ -1,3 +1,8 @@
 <div class="col-lg-3 p-4 d-flex justify-content-center">
-  <h4><%= link_to team.abbreviation, team_path(team.id) %></h4>
+  <% if params.include? :organize_by %>
+    <h4><%= link_to team.abbreviation, team_path(team.id) %></h4>
+  <% else %>
+    <h4><%= link_to team.abbreviation, team_path(team.id) %></h4>
+    <%= image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{team.id}.svg", size: '90x90' %>
+  <% end %>
 </div>

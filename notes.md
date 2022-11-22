@@ -1,3 +1,1 @@
-I don't like the cards; Maybe just make it a list...
-
-Rails console
+Isn't this a design issue? It seriously seems like a design issue. And why am I spending so much time on it? why not just do something I can do? 

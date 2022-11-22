@@ -1,0 +1,18 @@
+<div class="col p-3 d-flex flex-column align-items-center">
+  <h2>Eastern Conference</h2>
+  <% eastern_teams.each do |eastern_team| %>
+    <div class="d-flex">
+      <%= render partial: "team_card", locals: { team: eastern_team} %>
+      <%= image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-dark/#{eastern_team.id}.svg", size: '90x90' %>
+    </div>
+  <% end %>
+</div>
+<div class="col p-3 d-flex flex-column align-items-center">
+  <h2>Western Conference</h2>
+  <% western_teams.each do |western_team| %>
+    <div class="d-flex">
+      <%= render partial: "team_card", locals: { team: western_team} %>
+      <%= image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-dark/#{western_team.id}.svg", size: '90x90' %>
+    </div>
+  <% end %>
+</div>
