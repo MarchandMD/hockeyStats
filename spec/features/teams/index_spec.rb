@@ -18,5 +18,12 @@ RSpec.describe 'Teams' do
       click_link 'NJD'
       expect(current_path).to eq('/teams/1')
     end
+
+    it 'has a button to organize teams by conference' do
+      expect(page).to have_link('Conferences')
+      click_link 'Conferences'
+      expect(current_path).to eq("/teams")
+    end
+
   end
 end
