@@ -2,8 +2,8 @@
   <h2>Eastern Conference</h2>
   <% eastern_teams.each do |eastern_team| %>
     <div class="d-flex">
+      <%= image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{eastern_team.id}.svg", size: '80x80' %>
       <%= render partial: "team_card", locals: { team: eastern_team} %>
-      <%= image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-dark/#{eastern_team.id}.svg", size: '90x90' %>
     </div>
   <% end %>
 </div>
@@ -11,8 +11,8 @@
   <h2>Western Conference</h2>
   <% western_teams.each do |western_team| %>
     <div class="d-flex">
+      <%= image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/#{western_team.id}.svg", size: '80x80' %>
       <%= render partial: "team_card", locals: { team: western_team} %>
-      <%= image_tag "https://www-league.nhlstatic.com/images/logos/teams-current-primary-dark/#{western_team.id}.svg", size: '90x90' %>
     </div>
   <% end %>
 </div>
