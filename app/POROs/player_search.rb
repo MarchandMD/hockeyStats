@@ -2,12 +2,12 @@ require './app/services/nhlapi_services'
 require './app/poros/player'
 
 class PlayerSearch
-    def player(id)
-      player = service.player(id)
-      player_stats = player[:stats]
+  def player_stats(id)
+    player = service.player(id)
+    player = player[:stats][0][:splits].map do |season_split|
+      Player.new(season_split)
     end
-
-
+  end
 
   def service
     NhlApiService.new
