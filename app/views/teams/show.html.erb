@@ -5,3 +5,67 @@
     <p><%= link_to 'roster', team_players_path(@team.id)  %></p>
   </div>
 </div>
+<div class="row">
+  <div class="col">
+    <table class="table">
+      <tr>
+        <th>id</th>
+        <td><%= @team.id %></td>
+      </tr>
+        <tr>
+          <th>link</th>
+          <td><%= @team.link %></td>
+        </tr>
+        <tr>
+          <th>venue</th>
+          <td><%= @team.venue %></td>
+        </tr>
+        <tr>
+          <th>abbreviation</th>
+          <td><%= @team.abbreviation %></td>
+        </tr>
+        <tr>
+          <th>teamName</th>
+          <td><%= @team.teamName %></td>
+        </tr>
+        <tr>
+          <th>locationName</th>
+          <td><%= @team.locationName %></td>
+        </tr>
+        <tr>
+          <th>firstYearOfPlay</th>
+          <td><%= @team.firstYearOfPlay %></td>
+        </tr>
+        <tr>
+          <th>division</th>
+          <td><%= @team.division %></td>
+        </tr>
+        <tr>
+          <th>conference</th>
+          <td><%= @team.conference %></td>
+        </tr>
+        <tr>
+          <th>franchise</th>
+          <td><%= @team.franchise %></td>
+        </tr>
+        <tr>
+          <th>shortName</th>
+          <td><%= @team.shortName %></td>
+        </tr>
+        <tr>
+          <th>officialSiteUrl</th>
+          <td><%= link_to @team.officialSiteUrl, @team.officialSiteUrl %></td>
+        </tr>
+        <tr>
+          <th>franchiseId</th>
+          <td><%= @team.franchiseId %></td>
+        </tr>
+        <tr>
+          <th>active</th>
+          <td><%= @team.active %></td>
+        </tr>
+    </table>
+    <tr>
+    </tr>
+  </div>
+</div>

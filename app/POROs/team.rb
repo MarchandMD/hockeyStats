@@ -1,6 +1,19 @@
 class Team
-  attr_reader :id, :name, :link, :venue, :abbreviation, :teamName, :locationName, :firstYearOfPlay, :division,
-              :conference, :franchise, :shortName, :officialSiteUrl, :franchiseId, :active
+  attr_reader :id,
+              :name,
+              :link,
+              :venue,
+              :abbreviation,
+              :teamName,
+              :locationName,
+              :firstYearOfPlay,
+              :division,
+              :conference,
+              :franchise,
+              :shortName,
+              :officialSiteUrl,
+              :franchiseId,
+              :active
 
   def initialize(data)
     @id = data[:id]

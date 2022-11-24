@@ -1,41 +1,24 @@
 <div class="row">
-  <div class="col-sm-12 col-md-6">
-    <%= @data['people'][0]['fullName'] %>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-12 col-md-6">
-    <table class="table-sm">
+  <div class="col">
+    <table class="table">
       <tr>
-        <th>year</th>
-        <th>Team</th>
-        <th>G</th>
-        <th>A</th>
-        <th>PTS</th>
-        <th>TOI</th>
+        <th>Year</th>
+        <th>Games Played</th>
+        <th>Goals</th>
+        <th>Assists</th>
+        <th>Total Points</th>
+        <th>PIMs</th>
       </tr>
-      <% @stats['stats'][0]['splits'].reverse.each do |year| %>
+      <% @player_stats.each do |szn|%>
         <tr>
-        <% if year['league']['name'] == "National Hockey League" %>
-          <td>
-            <% year1 = year['season'].chomp[0..3]%>
-            <% year2 = year['season'].chomp[-4..-1]%>
-            <%= "#{year1} - #{year2}" %>
-          </td>
-          <td><%= year['team']['name'] %></td>
-          <td>
-            <%= year['stat']['goals'] %>
-          </td>
-          <td><%= year['stat']['assists'] %></td>
-          <td><%= year['stat']['points'] %></td>
-          <td><%= year['stat']['timeOnIce'] %></td>
-          <%  end %>
+          <td><%= szn.season %></td>
+          <td><%= szn.games_played %></td>
+          <td><%= szn.goals %></td>
+          <td><%= szn.assists %></td>
+          <td><%= szn.total_points %></td>
+          <td><%= szn.penalty_minutes %></td>
         </tr>
       <% end %>
     </table>
-  </div>
-  <div class="col-sm-12 col-md-6">
-    <%= keys = @stats['stats'][0]['splits'][8]['stat'].keys %>
-    
   </div>
 </div>
