@@ -22,8 +22,6 @@ class ScoreSearch
     @teams[:home][:onIcePlus]
     @teams[:home][:scratches]
     @teams[:home][:penaltyBox]
-
-    require 'pry'; binding.pry
   end
 
   def service
