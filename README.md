@@ -100,6 +100,7 @@ Gems used in testing, development:
 - `faraday`
 - `pry-rails`
 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -132,6 +133,7 @@ The intended usage of this app will be  natively in the browser, though with the
 - [x] troubleshoot development environment to fix glaring errors
 - [x] Install `pg`
 - [x] Install `faraday`
+- [x] add CI via CircleCI
 - [ ] Add Git commit template
 - [ ] Update acknowledgments
 - [ ] Plan MVP
@@ -139,7 +141,6 @@ The intended usage of this app will be  natively in the browser, though with the
 - [ ] Develop schedule for construction
 - [ ] Develop schema for entire project
 - [ ] update test suite to passing
-- [ ] add CI via CircleCI
 - [ ] deploy to either Heroku, Render or Fly.IO
 
 
@@ -206,8 +207,8 @@ Use this space to list resources you find helpful and would like to give credit 
 [stars-shield]: https://img.shields.io/github/stars/marchandmd/hockeyStats.svg?style=for-the-badge
 [stars-url]: https://github.com/marchandmd/hockeyStats/stargazers
 [issues-shield]: https://img.shields.io/github/issues/marchandmd/hockeyStats.svg?style=for-the-badge
-[issues-url]: https://github.com/marchandmd/hockeyStats/issues
 [license-shield]: https://img.shields.io/github/license/marchandmd/hockeyStats.svg?style=for-the-badge
+[issues-url]: https://github.com/marchandmd/hockeyStats/issues
 [license-url]: https://github.com/marchandmd/hockeyStats/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/mmarchand1/
