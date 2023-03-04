@@ -11,11 +11,4 @@
  * It is generally better to create a new file per style scope.
  *
  */
-@import "simple_calendar";
-@import "leaders.scss";
 @import "bootstrap";
-
-.table td.fit, 
-.table th.fit {
-    width: 1%;
-}
