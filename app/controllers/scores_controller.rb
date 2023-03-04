@@ -1,8 +1,9 @@
-class ScoresController < ApplicationController
+require '../hockeyStats/app/services/nhlapi_service'
 
+class ScoresController < ApplicationController
   def index
-    score = ScoreSearch.new.game_info
-    @away = score[0][1]
-    @home = score[1][1]
+    schedule = NhlApiService.new.schedule
+    game_id = schedule[:dates][0][:games].first[:gamePk]
+    @linescore = NhlApiService.new.linescore(game_id)
   end
 end

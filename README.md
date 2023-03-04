@@ -135,13 +135,17 @@ The intended usage of this app will be  natively in the browser, though with the
 - [x] Install `faraday`
 - [x] add CI via CircleCI
 - [x] Add Git commit template
+- [x] update test suite to passing
+- [x] update gitmessage.txt to .md
+- [ ] Update Scores view to display linescores for all teams
+- [ ] Re-factor linescores/scores controller to use a Facade to process info from Linescores NhlApiService
 - [ ] Update acknowledgments
 - [ ] Plan MVP
 - [ ] Revisit documentation with updates made, specifically new gems added
 - [ ] Develop schedule for construction
 - [ ] Develop schema for entire project
-- [ ] update test suite to passing
 - [ ] deploy to either Heroku, Render or Fly.IO
+- [ ] troubleshoot app not respecting FILE path
 
 
 See the [open issues](https://github.com/marchandmd/hockeyStats/issues) for a full list of proposed features (and known issues).

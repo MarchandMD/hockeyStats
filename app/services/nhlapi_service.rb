@@ -1,4 +1,12 @@
 class NhlApiService
+  def linescore(game_id)
+    get_url("/api/v1/game/#{game_id}/linescore")
+  end
+
+  def schedule(date = nil)
+    get_url("/api/v1/schedule?date=#{date}")
+  end
+
   def teams
     get_url('https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster')
   end
