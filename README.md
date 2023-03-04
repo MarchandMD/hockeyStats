@@ -150,6 +150,10 @@ The intended usage of this app will be  natively in the browser, though with the
 - [x] update test suite to passing
 - [x] update gitmessage.txt to .md
 - [x] Update Scores view to display linescores for all teams
+- [x] remove `configurations` from nav-bar....remove controller and views as well
+- [ ] Add schedule for entire season? For individual teams?
+- [ ] Create rake task to populate development db with entire season's worth of regular season games
+- [ ] Determine status code for game in progress (currently is listed in Game enum as 4, though may not be accurate)
 - [ ] Re-factor linescores/scores controller to use a Facade to process info from Linescores NhlApiService
 - [ ] Update acknowledgments
 - [ ] Plan MVP
