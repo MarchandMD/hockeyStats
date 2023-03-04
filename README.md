@@ -136,6 +136,7 @@ The intended usage of this app will be  natively in the browser, though with the
 - [x] add CI via CircleCI
 - [x] Add Git commit template
 - [x] update test suite to passing
+- [x] update gitmessage.txt to .md
 - [ ] Update Scores view to display linescores for all teams
 - [ ] Re-factor linescores/scores controller to use a Facade to process info from Linescores NhlApiService
 - [ ] Update acknowledgments
