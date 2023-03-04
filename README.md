@@ -99,6 +99,7 @@ Gems used in testing, development:
 - `pg`
 - `faraday`
 - `pry-rails`
+- `simplecov`
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
