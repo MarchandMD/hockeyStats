@@ -6,7 +6,7 @@ RSpec.describe Game, type: :model do
     game_data = {
       home: 'Chicago Blackhawks',
       away: 'Toronto Maple Leafs',
-      status: 0
+      status: 1
     }
 
     game = Game.new(game_data)
@@ -21,6 +21,5 @@ RSpec.describe Game, type: :model do
     games.each do |game|
      Game.create!(home: game[:teams][:home][:team][:name], away: game[:teams][:away][:team][:name], status: game[:status][:statusCode].to_i)
     end
-    require 'pry'; binding.pry
   end
 end
