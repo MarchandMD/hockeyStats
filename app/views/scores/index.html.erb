@@ -1,1 +1,16 @@
-<% @linescore %>
+<div class="row">
+  <div class="col-3 border border-1">
+    <div>
+      <%= @linescore[:teams][:away][:team][:name] %>
+      <%= @linescore[:teams][:away][:goals] %>
+    </div>
+    <div>
+      <%= @linescore[:teams][:home][:team][:name] %>
+      <%= @linescore[:teams][:home][:goals] %>
+    </div>
+    <div class="border-top">
+      current period
+      <%= @linescore[:currentPeriod] %>
+    </div>
+  </div>
+</div>
