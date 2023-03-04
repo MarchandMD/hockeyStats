@@ -134,7 +134,7 @@ The intended usage of this app will be  natively in the browser, though with the
 - [x] Install `pg`
 - [x] Install `faraday`
 - [x] add CI via CircleCI
-- [ ] Add Git commit template
+- [x] Add Git commit template
 - [ ] Update acknowledgments
 - [ ] Plan MVP
 - [ ] Revisit documentation with updates made, specifically new gems added
