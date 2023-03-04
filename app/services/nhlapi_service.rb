@@ -7,6 +7,10 @@ class NhlApiService
     get_url("/api/v1/schedule?date=#{date}")
   end
 
+  def season_schedule(season = nil)
+    get_url("/api/v1/schedule?season=#{season}")
+  end
+
   def teams
     get_url('https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster')
   end
