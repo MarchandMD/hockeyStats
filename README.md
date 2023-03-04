@@ -64,6 +64,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#schema">Schema</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -125,6 +126,16 @@ ruby v2.7.4
 
 
 The intended usage of this app will be  natively in the browser, though with the intention of scaling to a full remote UX to be accessible via mobile devices.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!--SCHEMA  EXAMPLES -->
+
+## Schema
+<div>
+    <img src="app/assets/images/schema_1.png" alt="alt_text" >
+</div>
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
