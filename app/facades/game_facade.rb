@@ -18,7 +18,7 @@ class GameFacade
       date[:games].each do |game|
         Game.create!(home: game[:teams][:home][:team][:name],
                      away: game[:teams][:away][:team][:name],
-                     status: game[:status][:statusCode].to_i,
+                     status: game[:status][:detailedState],
                      date: game[:gameDate])
       end
     end
