@@ -1,4 +1,4 @@
-require './app/services/nhlapi_services'
+require './app/services/nhlapi_service'
 require './app/poros/team'
 
 class TeamSearch

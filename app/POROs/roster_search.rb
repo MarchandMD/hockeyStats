@@ -1,4 +1,4 @@
-require './app/services/nhlapi_services'
+require './app/services/nhlapi_service'
 require './app/poros/person'
 
 class RosterSearch
@@ -8,7 +8,7 @@ class RosterSearch
     roster = roster[:roster].map do |roster_spot|
       Person.new(roster_spot[:person])
     end
-    
+
   end
 
   def service
