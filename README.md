@@ -100,7 +100,7 @@ Gems used in testing, development:
 - `pg`
 - `faraday`
 - `pry-rails`
-- `simplecov`
+- `factory_bot_rails`
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -165,7 +165,7 @@ The intended usage of this app will be  natively in the browser, though with the
 - [ ] deploy to either Heroku, Render or Fly.IO
 - [ ] troubleshoot app not respecting FILE path
 - [ ] Remove unneeded files from `poros` dir
-- [ ] remove enum from `Game` object and instead shift the column to a string that is populated from `status[:detailedState]` 
+- [ ] remove enum from `Game` object and instead shift the column to a string that is populated from `status[:detailedState]`
 
 
 See the [open issues](https://github.com/marchandmd/hockeyStats/issues) for a full list of proposed features (and known issues).

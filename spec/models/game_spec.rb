@@ -6,7 +6,7 @@ RSpec.describe Game, type: :model do
     game_data = {
       home: 'Chicago Blackhawks',
       away: 'Toronto Maple Leafs',
-      status: 1
+      status: 'Final'
     }
 
     game = Game.new(game_data)
@@ -17,9 +17,15 @@ RSpec.describe Game, type: :model do
   it 'can be created from linescore data' do
     games = NhlApiService.new.schedule[:dates][0][:games]
     expect(games).to be_a Array
+  end
 
-    games.each do |game|
-     Game.create!(home: game[:teams][:home][:team][:name], away: game[:teams][:away][:team][:name], status: game[:status][:statusCode].to_i)
+  describe 'class methods' do
+    describe 'todays_games' do
+      it 'returns todays games' do
+        todays_games = Game.todays_games
+
+        expect(todays_games).to be_an Array
+      end
     end
   end
 end
