@@ -158,6 +158,7 @@ The intended usage of this app will be  natively in the browser, though with the
 - [ ] Develop schema for entire project
 - [ ] deploy to either Heroku, Render or Fly.IO
 - [ ] troubleshoot app not respecting FILE path
+- [ ] Remove unneeded files from `poros` dir
 
 
 See the [open issues](https://github.com/marchandmd/hockeyStats/issues) for a full list of proposed features (and known issues).
