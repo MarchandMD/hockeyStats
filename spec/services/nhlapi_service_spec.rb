@@ -14,7 +14,6 @@ describe 'NhlApiService' do
   describe '#season_schedule' do
     it 'grabs the season schedule for current season, by default' do
       season_schedule = NhlApiService.new.season_schedule(20222023)
-      require 'pry'; binding.pry
       expect(season_schedule).to be_a Hash
     end
   end
