@@ -3,11 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
-gem 'celly'
-gem 'dotenv'
-gem 'rest-client'
-gem 'simple_calendar'
-gem 'bootstrap', '~> 5.1.3'
+gem 'bootstrap', '~> 5.2.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
 # Use sqlite3 as the database for Active Record
@@ -58,17 +54,15 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
+  # gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  # gem 'chromedriver-helper'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'activeresource', '~> 5.1.0'
-gem 'pry', '~> 0.14.1'
-gem "awesome_print", "~> 1.9"
 
 gem "pry-rails", "~> 0.3.9"
 
@@ -76,6 +70,10 @@ gem "simplecov", "~> 0.21.2"
 
 gem "shoulda-matchers", "~> 5.2", :groups => [:development, :test]
 
-gem "httparty", "~> 0.20.0"
-
 gem "rspec-rails", "~> 5.1"
+
+gem "faraday", "~> 2.7"
+
+gem "pg", "~> 1.4"
+
+gem "net-http", "~> 0.3.2"

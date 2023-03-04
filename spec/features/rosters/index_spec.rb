@@ -6,12 +6,4 @@ RSpec.describe 'Rosters' do
 
     visit "/teams/#{@roster.id}/players"
   end
-
-  describe '#index' do
-    it 'has a list of current players' do
-
-    end
-
-  end
-
 end

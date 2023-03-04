@@ -96,7 +96,9 @@ What did I learn building this:
 
 Gems used in testing, development:
 
-- to be added
+- `pg`
+- `faraday`
+- `pry-rails`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,11 +129,13 @@ The intended usage of this app will be  natively in the browser, though with the
 <!-- ROADMAP -->
 
 ## Roadmap
-- [ ] troubleshoot development environment to fix glaring errors
-- [ ] Install `pg`
-- [ ] Install `faraday`
+- [x] troubleshoot development environment to fix glaring errors
+- [x] Install `pg`
+- [x] Install `faraday`
+- [ ] Add Git commit template
+- [ ] Update acknowledgments
 - [ ] Plan MVP
-- [ ] Revisit documentation with updates made
+- [ ] Revisit documentation with updates made, specifically new gems added
 - [ ] Develop schedule for construction
 - [ ] Develop schema for entire project
 - [ ] update test suite to passing
