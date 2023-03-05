@@ -22,6 +22,8 @@ RSpec.describe Game, type: :model do
   describe 'class methods' do
     describe 'todays_games' do
       it 'returns todays games' do
+        create_list(:game, 10)
+
         todays_games = Game.todays_games
 
         expect(todays_games).to be_an Array
