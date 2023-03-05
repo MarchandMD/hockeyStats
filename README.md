@@ -153,19 +153,19 @@ The intended usage of this app will be  natively in the browser, though with the
 - [x] remove `configurations` from nav-bar....remove controller and views as well
 - [x] Add schedule for entire season? For individual teams?
 - [x] Create rake task to populate development db with entire season's worth of regular season games
-- [ ] On the `scores#index`, update the page to show games (home/away) and status (scheduled, in_progress, finished)
-- [ ] Update the GameFacade to use `Today` Railstime helper to grab current days games
-- [ ] Determine status code for game in progress (currently is listed in Game enum as 4, though may not be accurate)
+- [x] On the `scores#index`, update the page to show games (home/away) and status (scheduled, in_progress, finished)
+- [x] Update the GameFacade to use `Today` Railstime helper to grab current days games
+- [x] Determine status code for game in progress (currently is listed in Game enum as 4, though may not be accurate)
+- [x] remove enum from `Game` object and instead shift the column to a string that is populated from `status[:detailedState]`
 - [ ] Re-factor linescores/scores controller to use a Facade to process info from Linescores NhlApiService
 - [ ] Update acknowledgments
-- [ ] Plan MVP
 - [ ] Revisit documentation with updates made, specifically new gems added
 - [ ] Develop schedule for construction
 - [ ] Develop schema for entire project
 - [ ] deploy to either Heroku, Render or Fly.IO
 - [ ] troubleshoot app not respecting FILE path
 - [ ] Remove unneeded files from `poros` dir
-- [ ] remove enum from `Game` object and instead shift the column to a string that is populated from `status[:detailedState]`
+- [ ] Update to use dynamic data VS using the rake task to seed the database
 
 
 See the [open issues](https://github.com/marchandmd/hockeyStats/issues) for a full list of proposed features (and known issues).
