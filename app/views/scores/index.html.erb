@@ -8,6 +8,7 @@
               <div><%= game.home %></div>
               <div><%= game.away %></div>
               <div><%= game.status %></div>
+              <%= link_to 'predict this game', score_path(game) %>
             </div>
           </div>
         </li>
