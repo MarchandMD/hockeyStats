@@ -101,6 +101,7 @@ Gems used in testing, development:
 - `faraday`
 - `pry-rails`
 - `factory_bot_rails`
+- `shoulda-matchers`
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
