@@ -1,0 +1,17 @@
+<div class="row justify-content-center">
+  <div class="col-6">
+    <%= form_with(url: users_path, method: :post, local: true, class: "p-4 border rounded-3 bg-light") do |f| %>
+      <%= content_tag :legend, "Sign Up", class: 'display-4' %>
+      <div class="form-floating mb-3">
+        <%= f.text_field :email, type: 'email', class: 'form-control', id: 'floatingInput', placeholder: 'email'  %>
+        <%= f.label :email, 'email address' %>
+      </div>
+      <div class="form-floating mb-3">
+        <%= f.text_field :password, type: 'password', class:'form-control', id: 'floatingInput', placeholder: 'password' %>
+        <%= f.label :password, 'password' %>
+      </div>
+      <%= f.submit 'Sign Up', class: 'btn btn-primary w-100 btn-lg' %>
+    <% end %>
+    <%= link_to 'I already have an account', root_path %>
+  </div>
+</div>
