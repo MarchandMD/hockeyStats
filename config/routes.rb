@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :standings, only: %i[index show]
   resources :leaders, only: [:index]
   resources :schedule, only: [:index]
-  resources :scores, only: [:index]
+  resources :scores, only: %i[index show post]
   resources :configurations, only: [:index]
   resources :predictions
 end
