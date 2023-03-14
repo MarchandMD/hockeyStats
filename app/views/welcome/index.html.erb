@@ -17,5 +17,7 @@
       <%= f.submit 'Sign Up', class: 'btn btn-primary w-100 btn-lg' %>
     <% end %>
     <%= link_to 'I already have an account', root_path %>
+    <%= link_to "github authentication", "https://github.com/login/oauth/authorize?client_id=#{ENV.fetch('client_id')}&scope=repo
+" %>
   </div>
 </div>
