@@ -6,13 +6,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.find_or_initialize_by(email: params[:email])
 
-    if @user.save
+    if params[:password] ==
+       params[:password_confirmation] && @user.save
       flash[:success] = "Welcome, #{@user.email}!"
       redirect_to @user
     else
-      render 'welcome/index'
+      flash[:failure] = "Passwords must match"
+      redirect_to root_path
     end
   end
 
