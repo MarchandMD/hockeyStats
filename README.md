@@ -166,6 +166,8 @@ The intended usage of this app will be  natively in the browser, though with the
 - [ ] deploy to either Heroku, Render or Fly.IO
 - [ ] troubleshoot app not respecting FILE path
 - [ ] Integration testing for signing up
+- [ ] Refactor `sessions#create` to extract and DRY up the method
+- [ ] Refactor `sessions#create` to address the complexity around creating a new user and how to populate the password and or update it upon user creation when using Oauth
 - [ ] Troubleshoot the zulu time format of the game date from the API for accuracy with testing
 - [ ] Remove unneeded files from `poros` dir
 - [ ] Update to use dynamic data VS using the rake task to seed the database
