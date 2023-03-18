@@ -20,6 +20,9 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
+    @user.update!(favorite_team: params[:team])
+    redirect_to user_path(@user)
   end
 
   private

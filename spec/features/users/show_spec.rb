@@ -21,6 +21,8 @@ describe 'Users show page' do
       team = Team.first
       select team.name, from: 'team'
       click_on 'save'
+      expect(current_path).to eq(user_path(@user))
+      expect(page).to have_content("favorite team: #{team.name}")
     end
   end
 end
