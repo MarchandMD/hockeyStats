@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def create
@@ -16,6 +17,9 @@ class UsersController < ApplicationController
       flash[:failure] = "Passwords must match"
       redirect_to root_path
     end
+  end
+
+  def update
   end
 
   private
