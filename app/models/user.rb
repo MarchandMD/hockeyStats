@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :games, through: :predictions
 
   validates :email, presence: true
-  validates :password, presence: true
+  validates :password, presence: true, on: :create
 
   has_secure_password
 end
