@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :scores, only: %i[index show post]
 
-  resources :users, only: %i[index show create] do
+  resources :users, only: %i[index show create update] do
     resources :predictions, only: %i[index new create]
   end
 end

@@ -17,4 +17,13 @@ describe 'NhlApiService' do
       expect(season_schedule).to be_a Hash
     end
   end
+  describe '#teams' do
+    it 'grabs all the NHL teams, and has their names' do
+      teams = NhlApiService.new.teams
+      expect(teams).to be_a Array
+      teams.all? do |team|
+        expect(team).to have_key :name
+      end
+    end
+  end
 end

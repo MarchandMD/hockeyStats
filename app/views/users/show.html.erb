@@ -3,11 +3,17 @@
 <% end %>
 <div class="row border border-1">
   <div class="row">
-    <div class="col-6 border border-1">
+    <div class="col-8 border border-1">
       Choose your favorite team
+      <%= form_tag("/users/#{@user.id}", method: :put) do %>
+        <% teams_array = Team.all.map { |team| team.name } %>
+        <%= select_tag(:team, options_for_select(teams_array)) %>
+        <%= submit_tag 'save' %>
+      <% end %>
     </div>
-    <div class="col-6 border border-1">
+    <div class="col-4 border border-1">
       Total points: 0
+      favorite team: tbd
     </div>
   </div>
 </div>
