@@ -12,7 +12,7 @@ class NhlApiService
   end
 
   def teams
-    get_url('https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster')
+    get_url('https://statsapi.web.nhl.com/api/v1/teams')[:teams]
   end
 
   def team(id)
