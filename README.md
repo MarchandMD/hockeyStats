@@ -144,6 +144,7 @@ The intended usage of this app will be  natively in the browser, though with the
 
 ## Roadmap
 - [x] Remove unneeded files from `poros` dir
+- [ ] Complete user stories 4 - 6
 - [ ] Update README to include running of rake tasks during setup
 - [ ] Re-factor linescores/scores controller to use a Facade to process info from Linescores NhlApiService
 - [ ] Revisit documentation with updates made, specifically new gems added
