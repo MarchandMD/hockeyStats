@@ -117,12 +117,17 @@ Gems used in testing, development:
 
 Until this app is deployed to a SaaS site, this project will only be living in a development environment
 
-clone this repo, then spin it up with `rails s` after `cd` into the root directory
+clone this repo, and `cd` into the root directory
+
+setup the database (if you have postgres on your local machine) with `rails db:{create,seed}`
+
+run `rails nhl:seed_regular_season_games` and `rails nhl:add_teams`
+
+then spin up the server with `rails s`
 
 ### Prerequisites
 
 ruby v2.7.4
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -130,7 +135,7 @@ ruby v2.7.4
 
 ## Usage
 
-The intended usage of this app will be  natively in the browser, though with the intention of scaling to a full remote UX to be accessible via mobile devices.
+The intended usage of this app will be natively in the browser, though with the intention of scaling to a full remote UX to be accessible via mobile devices.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,12 +153,10 @@ The intended usage of this app will be  natively in the browser, though with the
 
 ## Roadmap
 - [x] Remove unneeded files from `poros` dir
+- [ ] Add additional copy to the home page/landing page
+- [ ] Add ability to log out
 - [ ] Complete user stories 4 - 6
-- [ ] Update README to include running of rake tasks during setup
 - [ ] Re-factor linescores/scores controller to use a Facade to process info from Linescores NhlApiService
-- [ ] Revisit documentation with updates made, specifically new gems added
-- [ ] Develop schedule for construction
-- [ ] Develop schema for entire project
 - [ ] deploy to either Heroku, Render or Fly.IO
 - [ ] troubleshoot app not respecting FILE path
 - [ ] Integration testing for signing up
@@ -161,7 +164,6 @@ The intended usage of this app will be  natively in the browser, though with the
 - [ ] Refactor `sessions#create` to address the complexity around creating a new user and how to populate the password and or update it upon user creation when using Oauth
 - [ ] Troubleshoot the zulu time format of the game date from the API for accuracy with testing
 - [ ] Update to use dynamic data VS using the rake task to seed the database
-
 
 See the [open issues](https://github.com/marchandmd/hockeyStats/issues) for a full list of proposed features (and known issues).
 
