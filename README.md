@@ -77,12 +77,17 @@
 
 ## About The Project
 
-Consuming the NHL API (no official documentation) to display statistics, and move towards an interactive game for users to sign-up to, and make predictions regarding the outcome of games prior to and during the game, based on live-updates of the API.
+Why should gamblers have all the fun? And why not make more predictions before and during a game to increase fan engagement and interactivity?
 
+This project is going to be an interactive interface between the NHL API and users. By creating an account, and selecting a favorite team, a user will be able to make predictions RE the outcome of certain events of any given hockey game, and it will record their responses and award points based on correct answers.
+
+Eventually ranking players based on number of correct predictions will be added.
 
 What did I learn building this:
 
   - practicing VIM intermediate motions
+  - Oauth user authentication and bcrypt hand-rolled authentication
+  - Building custom rake tasks to seed databases
   - documentation, and maintenance of project documentation
   - project and feature planning; schema development VS PORO/facade creation
   - CI
@@ -125,7 +130,6 @@ ruby v2.7.4
 
 ## Usage
 
-
 The intended usage of this app will be  natively in the browser, though with the intention of scaling to a full remote UX to be accessible via mobile devices.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -156,7 +160,6 @@ The intended usage of this app will be  natively in the browser, though with the
 - [ ] Refactor `sessions#create` to extract and DRY up the method
 - [ ] Refactor `sessions#create` to address the complexity around creating a new user and how to populate the password and or update it upon user creation when using Oauth
 - [ ] Troubleshoot the zulu time format of the game date from the API for accuracy with testing
-- [ ] Update acknowledgments
 - [ ] Update to use dynamic data VS using the rake task to seed the database
 
 
