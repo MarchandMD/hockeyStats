@@ -25,6 +25,15 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def login_form
+  end
+
+  def login
+    user = User.find_by(email: params[:email])
+    flash[:success] = "Welcome, #{user.email}"
+    redirect_to user_path(user)
+  end
+
   private
 
   def user_params

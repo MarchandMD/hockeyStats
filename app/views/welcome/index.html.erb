@@ -1,22 +1,28 @@
-<div class="row justify-content-center">
-  <div class="col-6">
-    <%= form_with(url: users_path, method: :post, local: true, class: "p-4 border rounded-3 bg-light") do |f| %>
-      <%= content_tag :legend, "Sign Up", class: 'display-4' %>
-      <div class="form-floating mb-3">
-        <%= f.text_field :email, type: 'email', class: 'form-control', id: 'floatingInput', placeholder: 'email'  %>
-        <%= f.label :email, 'email address' %>
-      </div>
-      <div class="form-floating mb-3">
-        <%= f.text_field :password, type: 'password', class:'form-control', id: 'floatingInput', placeholder: 'password' %>
-        <%= f.label :password, 'password' %>
-      </div>
-      <div class="form-floating mb-3">
-        <%= f.text_field :password_confirmation, type: 'password', class:'form-control', id: 'floatingInput', placeholder: 'password_confirmation' %>
-        <%= f.label :password_confirmation, 'password_confirmation' %>
-      </div>
+<div class="col-lg-8">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur possimus cupiditate non? Reiciendis cum doloribus laboriosam praesentium nulla voluptatum aliquid ad sint animi, minima sunt officiis voluptatem, harum maxime aut.</p>
+</div>
+<div class="col-lg-4">
+  <%= form_with(url: users_path, method: :post, local: true, class: "p-4 border rounded-3 bg-light") do |f| %>
+    <%= content_tag :legend, "Sign Up", class: 'display-4' %>
+    <div class="form-floating mb-3">
+      <%= f.text_field :email, type: 'email', class: 'form-control', id: 'floatingInput', placeholder: 'email'  %>
+      <%= f.label :email, 'email address' %>
+    </div>
+    <div class="form-floating mb-3">
+      <%= f.text_field :password, type: 'password', class:'form-control', id: 'floatingInput', placeholder: 'password' %>
+      <%= f.label :password, 'password' %>
+    </div>
+    <div class="form-floating mb-3">
+      <%= f.text_field :password_confirmation, type: 'password', class:'form-control', id: 'floatingInput', placeholder: 'password_confirmation' %>
+      <%= f.label :password_confirmation, 'password_confirmation' %>
+    </div>
+    <div>
       <%= f.submit 'Sign Up', class: 'btn btn-primary w-100 btn-lg' %>
-    <% end %>
-    <%= link_to 'I already have an account', root_path %>
-    <%= link_to "github authentication", "https://github.com/login/oauth/authorize?client_id=#{ENV.fetch('client_id')}&scope=repo" %>
-  </div>
+    </div>
+  <% end %>
+    <div class="mt-3">
+      <%= button_to 'Log In', {action: "login_form", controller: 'users'}, {method: :get, class: 'btn btn-secondary w-100 btn-lg'} %>
+    </div>
+  <%= link_to 'I already have an account', root_path %>
+  <%= link_to "github authentication", "https://github.com/login/oauth/authorize?client_id=#{ENV.fetch('client_id')}&scope=repo" %>
 </div>

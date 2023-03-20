@@ -1,0 +1,14 @@
+ <%= form_with(url: login_path, method: :post, local: true, class: "p-4 border rounded-3 bg-light") do |f| %>
+  <%= content_tag :legend, "Log In", class: 'display-4' %>
+  <div class="form-floating mb-3">
+    <%= f.text_field :email, type: 'email', class: 'form-control', id: 'floatingInput', placeholder: 'email'  %>
+    <%= f.label :email, 'email address' %>
+  </div>
+  <div class="form-floating mb-3">
+    <%= f.text_field :password, type: 'password', class:'form-control', id: 'floatingInput', placeholder: 'password' %>
+    <%= f.label :password, 'password' %>
+  </div>
+  <div>
+    <%= f.submit 'Sign In', class: 'btn btn-primary w-100 btn-lg' %>
+  </div>
+<% end %>

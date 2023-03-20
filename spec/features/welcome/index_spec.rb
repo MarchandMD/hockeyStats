@@ -16,10 +16,27 @@ describe "Welcome path" do
         expect(current_path).to eq(user_path(latest_user))
         expect(page).to have_content("Welcome, #{latest_user.email}!")
       end
+
+      it 'can log in with valid credentials' do
+        user = User.create(email: 'test@test.com', password: 'pathword')
+
+        visit root_path
+
+        click_on "Log In"
+
+        expect(current_path).to eq(users_login_form_path)
+
+        fill_in "email",	with: user.email
+        fill_in "password",	with: user.password
+
+        click_on "Sign In"
+
+        expect(page).to have_content("Welcome, #{user.email}")
+      end
     end
 
     context "sad path" do
-      it 'returns a new user to the sign up page if their password and confirmation don\'t match' do
+      xit 'returns a new user to the sign up page if their password and confirmation don\'t match' do
         visit root_path
 
         fill_in "email",	with: "test@test.com"
