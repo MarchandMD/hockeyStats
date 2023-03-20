@@ -22,7 +22,6 @@ class SessionsController < ApplicationController
 
     response = conn.get('/user')
     data = JSON.parse(response.body, symbolize_names: true)
-
     user = User.find_or_create_by(uid: data[:id])
     user.email = data[:email]
     user.uid = data[:id]
