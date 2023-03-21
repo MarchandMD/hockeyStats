@@ -21,6 +21,11 @@
         <li class="nav-item">
           <%= link_to 'scores', scores_path, class: "nav-link" %>
         </li>
+        <% if !session[:user_id].nil? %>
+          <li class="nav-item">
+            <%= link_to 'log out', sessions_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

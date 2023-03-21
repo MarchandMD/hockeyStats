@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     if params[:password] ==
        params[:password_confirmation] && @user.save
       flash[:success] = "Welcome, #{@user.email}!"
+      session[:user_id] = @user.id
       redirect_to user_path(@user.id)
     else
       flash[:failure] = "Passwords must match"
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
   def login
     user = User.find_by(email: params[:email])
     flash[:success] = "Welcome, #{user.email}"
+    session[:user_id] = user.id
     redirect_to user_path(user)
   end
 
