@@ -24,5 +24,28 @@ describe 'Users show page' do
       expect(current_path).to eq(user_path(@user))
       expect(page).to have_content("favorite team: #{team.name}")
     end
+
+    it 'can log a user out' do
+      user = User.create(email: 'test@test.com', password: 'pathword')
+
+      visit root_path
+
+      click_on "Log In"
+
+      expect(current_path).to eq(users_login_form_path)
+
+      fill_in "email",	with: user.email
+      fill_in "password",	with: user.password
+
+      click_on "Sign In"
+
+      expect(page).to have_content("Welcome, #{user.email}")
+      expect(page).to have_content('log out')
+
+      click_on 'log out'
+
+      expect(current_path).to eq(root_path)
+      expect(page).to_not have_content('log out')
+    end
   end
 end
