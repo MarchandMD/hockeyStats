@@ -21,5 +21,4 @@ class SessionFacade
     response = conn.get('/user')
     [JSON.parse(response.body, symbolize_names: true), access_token]
   end
-
 end
