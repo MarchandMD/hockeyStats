@@ -10,20 +10,13 @@ RSpec.describe 'Teams' do
   describe '#index' do
     it 'has links to each teams page' do
       @teams.each do |team|
-        expect(page).to have_link(team.abbreviation.to_s)
+        expect(page).to have_link(team.name)
       end
     end
 
     it 'can navigate to an individual teams page' do
-      click_link 'NJD'
+      click_link 'New Jersey Devils'
       expect(current_path).to eq('/teams/1')
     end
-
-    it 'has a button to organize teams by conference' do
-      expect(page).to have_link('Conferences')
-      click_link 'Conferences'
-      expect(current_path).to eq("/teams")
-    end
-
   end
 end

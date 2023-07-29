@@ -1,8 +1,11 @@
-class ScoresController < ApplicationController
+require '../hockeyStats/app/services/nhlapi_service'
 
+class ScoresController < ApplicationController
   def index
-    score = ScoreSearch.new.game_info
-    @away = score[0][1]
-    @home = score[1][1]
+    @games = Game.todays_games
+  end
+
+  def show
+    @game = Game.find(params[:id])
   end
 end

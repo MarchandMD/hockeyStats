@@ -1,0 +1,31 @@
+<div class="row justify-content-evenly">
+  <div class="col-lg-8 border border-1 p-2 rounded-3">
+    <% if !current_user.nil? %>
+      <%= current_user.email %>
+    <% end %>
+    <h1>Dashboard for <%= @user.email %></h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis praesentium corporis tenetur dignissimos ab, necessitatibus itaque modi totam, quaerat ipsam dicta qui assumenda nulla blanditiis nisi earum saepe, hic temporibus.</p>
+    <h2>heading 2</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt aut tenetur vel corporis veniam voluptatum autem, quidem odit numquam recusandae repudiandae? Minus, enim! Animi porro repellendus, fugiat hic deserunt debitis!</p>
+    <h2>heading 2</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, aliquid autem. Explicabo unde nemo eaque quibusdam autem quas ea totam eius, error neque nesciunt, accusantium provident enim hic fugit quo.</p>
+    <% if @user.favorite_team.nil? %>
+      Choose your favorite team
+      <%= form_tag("/users/#{@user.id}", method: :put) do %>
+        <% teams_array = Team.all.map { |team| team.name } %>
+        <%= select_tag(:team, options_for_select(teams_array)) %>
+        <%= submit_tag 'save' %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-lg-2 border border-1 rounded-3 bg-light">
+    <div class="row border border-success flex-column h-100 justify-content-evenly">
+      <div class="col h-50 border-3 bg-white">
+        favorite team: <%= @user.favorite_team %>
+      </div>
+      <div class="col h-50 border-3 bg-white">
+        Total points: 0
+      </div>
+    </div>
+  </div>
+</div>

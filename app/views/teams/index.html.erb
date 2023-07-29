@@ -1,9 +1,4 @@
 <div class="row">
-  <div class="col d-flex justify-content-center">
-    <%= button_to 'Conferences', teams_path, method: :get, params: {organize_by: 'conference'}, class: 'btn btn-primary' %>
-  </div>
-</div>
-<div class="row">
   <% if params.include? :organize_by %>
     <% eastern_teams = @teams.select { |team| team.conference[:name] == 'Eastern' } %>
     <% western_teams = @teams.select { |team| team.conference[:name] == 'Western' } %>

@@ -1,3 +1,4 @@
+require '../hockeyStats/app/services/nhlapi_service'
 require 'rails_helper'
 
 RSpec.describe 'Teams' do

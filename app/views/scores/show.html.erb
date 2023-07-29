@@ -1,0 +1,7 @@
+<%= @game.home  %>
+<%= @game.away  %>
+<%= @game.status  %>
+<%= form_with(scope: :score, url: score_path, local: true) do |f| %>
+  <%= f.select(:team, options_for_select([[@game.home, 1], [@game.away, 2]])) %>
+  <%= f.submit %>
+<% end %>

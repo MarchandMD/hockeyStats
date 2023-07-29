@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
+  root to: 'welcome#index'
+
   get 'links/index'
   get 'about/index'
-  root to: 'welcome#index'
-  resources :teams, only: %i[index show] do
-    resources :players, only: %i[index], controller: 'rosters'
-    resources :players, only: %i[show]
+  get '/auth/github/callback', to: 'sessions#create'
+  get '/users/login_form', to: 'users#login_form'
+  post '/login', to: 'users#login'
+  delete '/sessions', to: 'sessions#delete'
+  resources :scores, only: %i[index show post]
+
+  resources :users, only: %i[index show create update] do
+    resources :predictions, only: %i[index new create]
   end
-  resources :standings, only: %i[index show]
-  resources :leaders, only: [:index]
-  resources :schedule, only: [:index]
-  resources :scores, only: [:index]
-  resources :configurations, only: [:index]
-  resources :predictions
 end

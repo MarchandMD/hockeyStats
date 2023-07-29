@@ -10,17 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_23_144311) do
+ActiveRecord::Schema.define(version: 2023_03_18_133352) do
 
-  create_table "predictions", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "games", force: :cascade do |t|
+    t.string "home"
+    t.string "away"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "name"
+    t.string "date"
+    t.string "winner"
+  end
+
+  create_table "predictions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "game_id"
+    t.string "expected_outcome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_predictions_on_game_id"
+    t.index ["user_id"], name: "index_predictions_on_user_id"
   end
 
   create_table "teams", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.integer "uid"
+    t.string "username"
+    t.string "token"
+    t.string "favorite_team"
+  end
+
+  add_foreign_key "predictions", "games"
+  add_foreign_key "predictions", "users"
 end
