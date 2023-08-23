@@ -77,21 +77,9 @@
 
 ## About The Project
 
-Why should gamblers have all the fun? And why not make more predictions before and during a game to increase fan engagement and interactivity?
+This is going to be a project to generate metrics for players, however, it is going to be iterative and focus on establishing just some basics for an MVP, and then grow from there.
 
-This project is going to be an interactive interface between the NHL API and users. By creating an account, and selecting a favorite team, a user will be able to make predictions RE the outcome of certain events of any given hockey game, and it will record their responses and award points based on correct answers.
-
-Eventually ranking players based on number of correct predictions will be added.
-
-What did I learn building this:
-
-  - practicing VIM intermediate motions
-  - Oauth user authentication and bcrypt hand-rolled authentication
-  - Building custom rake tasks to seed databases
-  - documentation, and maintenance of project documentation
-  - project and feature planning; schema development VS PORO/facade creation
-  - CI
-  - Test Driven Development
+This project is going to rely heavily on the NHL API, which has been well documented by Drew Hynes (and which I've contributed a small amount to). 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

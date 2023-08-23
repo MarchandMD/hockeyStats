@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_18_133352) do
+ActiveRecord::Schema.define(version: 2023_08_23_005245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,16 +23,6 @@ ActiveRecord::Schema.define(version: 2023_03_18_133352) do
     t.datetime "updated_at", null: false
     t.string "date"
     t.string "winner"
-  end
-
-  create_table "predictions", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "game_id"
-    t.string "expected_outcome"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_predictions_on_game_id"
-    t.index ["user_id"], name: "index_predictions_on_user_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -52,6 +42,4 @@ ActiveRecord::Schema.define(version: 2023_03_18_133352) do
     t.string "favorite_team"
   end
 
-  add_foreign_key "predictions", "games"
-  add_foreign_key "predictions", "users"
 end

@@ -7,9 +7,8 @@ Rails.application.routes.draw do
   get '/users/login_form', to: 'users#login_form'
   post '/login', to: 'users#login'
   delete '/sessions', to: 'sessions#delete'
+
   resources :scores, only: %i[index show post]
 
-  resources :users, only: %i[index show create update] do
-    resources :predictions, only: %i[index new create]
-  end
+  resources :users, onlye: %i[show]
 end
